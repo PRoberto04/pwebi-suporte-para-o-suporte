@@ -1,4 +1,5 @@
 import {Schema, model} from 'mongoose';
+import '../../config/database';
 
 const usuarioSchema = new Schema({
     nome: {
@@ -13,7 +14,16 @@ const usuarioSchema = new Schema({
     senha: {
         type: String,
         required: true
+    },
+
+    achievementChecklist: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'CheckNovoUsuario'
+    },
+    computerSetupChecklist: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'CheckFormatacao'
     }
 });
 
-export default model('Usuario', usuarioSchema);
+const Usuario = model('Usuario', usuarioSchema)
+
+export default Usuario;
