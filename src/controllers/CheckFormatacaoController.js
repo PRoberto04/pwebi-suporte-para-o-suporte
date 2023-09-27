@@ -1,4 +1,4 @@
-import CheckFormatacao from '../models/CheckFormatacao'
+import CheckFormatacao from '../models/CheckFormatacao.js'
 
 export const criarCheckFormatacao = async (req, res) => {
     try {

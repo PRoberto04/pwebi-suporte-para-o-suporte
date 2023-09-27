@@ -1,4 +1,4 @@
-import CheckNovoUsuario from '../models/CheckNovoUsuario';
+import CheckNovoUsuario from '../models/CheckNovoUsuario.js';
 
 export const criarCheckNovoUsuario = async (req, res) => {
     try {

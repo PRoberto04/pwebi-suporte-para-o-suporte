@@ -1,5 +1,5 @@
 import {Schema, model} from "mongoose";
-import '../../config/database';
+import '../../config/database.js';
 
 const checklistItemSchema = new Schema({
     description: String,

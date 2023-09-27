@@ -1,7 +1,7 @@
-import {Schema, model} from 'mongoose';
-import '../../config/database';
+import mongoose from 'mongoose';
+import '../../config/database.js';
 
-const usuarioSchema = new Schema({
+const usuarioSchema = new mongoose.Schema({
     nome: {
         type: String,
         required: true
@@ -17,13 +17,15 @@ const usuarioSchema = new Schema({
     },
 
     achievementChecklist: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'CheckNovoUsuario'
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'CheckNovoUsuario'
     },
     computerSetupChecklist: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'CheckFormatacao'
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'CheckFormatacao'
     }
 });
 
-const Usuario = model('Usuario', usuarioSchema)
+const Usuario = mongoose.model('Usuario', usuarioSchema);
 
 export default Usuario;
