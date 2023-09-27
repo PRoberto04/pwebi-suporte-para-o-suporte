@@ -59,7 +59,7 @@ export const detalhesUsuario = async(req, res) => {
     } catch (error) {
 
         res.status(500).json({ error: 'Ocorreu um erro interno ao buscar o usuário'})
-    };
+    }
 };
 
 export const atualizarUsuario = async (req, res) => {
@@ -80,7 +80,7 @@ export const atualizarUsuario = async (req, res) => {
 
     } catch (error) {
         res.status(500).json({ error: 'Ocorreu um errp interno ao atualizar o usuário'})
-    };
+    }
 };
 
 export const deletarUsuario = async (req, res) => {
@@ -95,6 +95,6 @@ export const deletarUsuario = async (req, res) => {
         res.status(204).send();
     } catch (error) {
         res.status(500).json({ error: 'Ocorreu um erro interno ao excluir o usuário'})
-    };
+    }
 };
 
