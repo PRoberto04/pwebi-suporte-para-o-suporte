@@ -23,7 +23,11 @@ app.use('/apostilas', apostilasRoute);
 app.use('/tutoriais', tutoriaisRoute);
 
 import usuarioRoutes from './routes/usuarioRoutes.js'
+import checkFormatacaoRoutes from './routes/checklist-formatacaoRoutes.js'
+import checkNovoUsuarioRoutes from './routes/checklist-novousuarioRoutes.js';
 
 app.use('/api/usuarios', usuarioRoutes);
+app.use('/api/checklist-formatacao', checkFormatacaoRoutes);
+app.use('/api/checklist-novousuario', checkNovoUsuarioRoutes);
 
 export default app;
