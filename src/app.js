@@ -22,4 +22,8 @@ app.use('/check-list-formatacao', checklistformatacaoRoute);
 app.use('/apostilas', apostilasRoute);
 app.use('/tutoriais', tutoriaisRoute);
 
+import usuarioRoutes from './routes/usuarioRoutes.js'
+
+app.use('/api/usuarios', usuarioRoutes);
+
 export default app;
