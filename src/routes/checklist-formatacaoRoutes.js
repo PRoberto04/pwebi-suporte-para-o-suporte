@@ -6,7 +6,7 @@ import {
     atualizarChecklistFormatacao,
     deletarChecklistFormatacao,
     marcarItemConcluido
-} from '../controllers/CheckFormatacaoController'
+} from '../controllers/CheckFormatacaoController.js'
 
 const router = express.Router();
 

@@ -6,7 +6,7 @@ import {
     atualizarChecklistNovoUsuario,
     deletarChecklistNovoUsuario,
     marcarItemConcluido
-} from '../controllers/CheckNovoUsuarioController'
+} from '../controllers/CheckNovoUsuarioController.js'
 
 const router = express.Router();
 

@@ -97,4 +97,3 @@ export const deletarUsuario = async (req, res) => {
         res.status(500).json({ error: 'Ocorreu um erro interno ao excluir o usuário'})
     }
 };
-
