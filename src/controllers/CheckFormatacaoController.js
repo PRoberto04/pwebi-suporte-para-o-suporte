@@ -2,7 +2,8 @@ import CheckFormatacao from '../models/CheckFormatacao'
 
 export const criarCheckFormatacao = async (req, res) => {
     try {
-        const {title, items} = req.body;
+
+        const { title, items } = req.body;
         
         if (!title || !items || !Array.isArray(items)) {
             return res.status(400).json({

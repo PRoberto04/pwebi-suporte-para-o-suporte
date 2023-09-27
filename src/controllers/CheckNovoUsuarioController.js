@@ -16,7 +16,10 @@ export const criarCheckNovoUsuario = async (req, res) => {
         await novoCheckNovoUsuario.save();
 
         res.status(201).json(novoCheckNovoUsuario);
+
     } catch (error) {
         
+        console.error('Erro ao criar o checklist de novo usuário');
+        res.status(500).json({ error: 'Ocorreu um erro interno ao criar o checklist de novo usuário'});
     }
 };
