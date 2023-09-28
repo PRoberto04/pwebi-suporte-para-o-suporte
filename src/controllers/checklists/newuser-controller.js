@@ -1,6 +1,6 @@
-import CheckNovoUsuario from '../models/CheckNovoUsuario.js';
+import checkNewUserModel from '../../models/checklists/newuser-model.js';
 
-export const criarCheckNovoUsuario = async (req, res) => {
+export const createCheckNewUser = async (req, res) => {
     try {
         const { title, items} = req.body;
         
@@ -10,11 +10,11 @@ export const criarCheckNovoUsuario = async (req, res) => {
             })
         };
 
-        const novoCheckNovoUsuario = new CheckNovoUsuario({ title, items });
+        const newCheckNewUser = new checkNewUserModel({ title, items });
 
-        await novoCheckNovoUsuario.save();
+        await newCheckNewUser.save();
 
-        res.status(201).json(novoCheckNovoUsuario);
+        res.status(201).json(newCheckNewUser);
 
     } catch (error) {
         
@@ -23,9 +23,9 @@ export const criarCheckNovoUsuario = async (req, res) => {
     }
 };
 
-export const listarChecklistNovoUsuario = async (req, res) => {
+export const listCheckNewUser = async (req, res) => {
     try {
-      const checklists = await CheckNovoUsuario.find();
+      const checklists = await checkNewUserModel.find();
 
       res.status(200).json(checklists);
 
@@ -34,9 +34,9 @@ export const listarChecklistNovoUsuario = async (req, res) => {
     }
 };
 
-export const detalhesChecklistNovoUsuario = async (req, res) => {
+export const detailCheckNewUser = async (req, res) => {
     try {
-      const checklist = await CheckNovoUsuario.findById(req.params.id);
+      const checklist = await checkNewUserModel.findById(req.params.id);
       if (!checklist) {
         return res.status(404).json({ error: 'Checklist de requisitos para novo usuário não encontrado.' });
       }
@@ -46,32 +46,32 @@ export const detalhesChecklistNovoUsuario = async (req, res) => {
     }
 };
 
-export const atualizarChecklistNovoUsuario = async (req, res) => {
+export const toUpdatecheckNewUser = async (req, res) => {
     try {
       const { title, items } = req.body;
 
-      const checklistAtualizado = await CheckNovoUsuario.findByIdAndUpdate(
+      const updatedNewUser = await checkNewUserModel.findByIdAndUpdate(
         req.params.id,
         { title, items },
         { new: true }
       );
 
-      if (!checklistAtualizado) {
+      if (!updatedNewUser) {
         return res.status(404).json({ error: 'Checklist de requisitos para novo usuário não encontrado.' });
       }
 
-      res.status(200).json(checklistAtualizado);
+      res.status(200).json(updatedNewUser);
     
     } catch (error) {
       res.status(500).json({ error: 'Ocorreu um erro interno ao atualizar o checklist de requisitos para novo usuário.' });
     }
 };
 
-export const deletarChecklistNovoUsuario = async (req, res) => {
+export const deleteCheckNewUser = async (req, res) => {
     try {
-      const checklistDeletado = await CheckNovoUsuario.findByIdAndDelete(req.params.id);
+      const deletedCheck = await checkNewUserModel.findByIdAndDelete(req.params.id);
 
-      if (!checklistDeletado) {
+      if (!deletedCheck) {
         return res.status(404).json({ error: 'Checklist de requisitos para novo usuário não encontrado.' });
       }
 
@@ -82,11 +82,11 @@ export const deletarChecklistNovoUsuario = async (req, res) => {
     }
 };
 
-export const marcarItemConcluido = async (req, res) => {
+export const markItemCompleted = async (req, res) => {
     try {
       const { itemId } = req.params;
 
-      const checklist = await CheckNovoUsuario.findById(req.params.id);
+      const checklist = await checkNewUserModel.findById(req.params.id);
 
       if (!checklist) {
         return res.status(404).json({ error: 'Checklist de requisitos para novo usuário não encontrado.' });

@@ -1,6 +1,6 @@
-import CheckFormatacao from '../models/CheckFormatacao.js'
+import checkFormattingModel from '../../models/checklists/formatting-model.js'
 
-export const criarCheckFormatacao = async (req, res) => {
+export const createCheckFormatting = async (req, res) => {
     try {
         const { title, items } = req.body;
         
@@ -10,11 +10,11 @@ export const criarCheckFormatacao = async (req, res) => {
             });
         }
 
-        const novoCheckFormatacao = new CheckFormatacao({ title, items });
+        const newCheckFormatting = new checkFormattingModel({ title, items });
 
-        await novoCheckFormatacao.save();
+        await newCheckFormatting.save();
 
-        res.status(201).json(novoCheckFormatacao);
+        res.status(201).json(newCheckFormatting);
     } catch (error) {
         
         console.error('Erro ao criar o checklist de formatação: ', error);
@@ -24,9 +24,9 @@ export const criarCheckFormatacao = async (req, res) => {
     }
 };
 
-export const listarCheckFormatacao = async (req, res) => {
+export const listCheckFormatting = async (req, res) => {
     try {
-        const checklist = await CheckFormatacao.find();
+        const checklist = await checkFormattingModel.find();
 
         res.status(200).json(checklist);
 
@@ -35,9 +35,9 @@ export const listarCheckFormatacao = async (req, res) => {
     };
 };
 
-export const detalhesCheckListFormatacao = async (req, res) => {
+export const detailsCheckFormatting = async (req, res) => {
     try {
-        const checklist = await CheckFormatacao.findById(req.params.id);
+        const checklist = await checkFormattingModel.findById(req.params.id);
 
         if(!checklist){
             return res.status(404).json({ error: 'Checklist de formatação não encontrado.' });
@@ -50,31 +50,31 @@ export const detalhesCheckListFormatacao = async (req, res) => {
     }
 };
 
-export const atualizarChecklistFormatacao = async (req, res) => {
+export const toUpdateCheckFormatting = async (req, res) => {
     try {
         const { title, items} = req.body;
 
-        const checklisAtualizado = await CheckFormatacao.findByIdAndUpdate(
+        const updatedFormatting = await checkFormattingModel.findByIdAndUpdate(
             req.params.id,
             { title, items },
             { new: true }
             );
 
-        if (!checklisAtualizado) {
+        if (!updatedFormatting) {
             return res.status(404).json({ error: 'Checklist de formatação não encontrado.' });
         }
 
-        res.status(200).json(checklisAtualizado);
+        res.status(200).json(updatedFormatting);
     } catch (error) {
         res.status(500).json({ error: 'Ocorreu um erro interno ao atualizar o checklist de formatação.' });
     }
 };
 
-export const deletarChecklistFormatacao = async (req, res) => {
+export const deleteCheckFormatting = async (req, res) => {
     try {
-      const checklistDeletado = await CheckFormatacao.findByIdAndDelete(req.params.id);
+      const deletedCheck = await checkFormattingModel.findByIdAndDelete(req.params.id);
 
-      if (!checklistDeletado) {
+      if (!deletedCheck) {
         return res.status(404).json({ error: 'Checklist de formatação não encontrado.' });
       }
 
@@ -85,11 +85,11 @@ export const deletarChecklistFormatacao = async (req, res) => {
     }
 };
 
-export const marcarItemConcluido = async (req, res) => {
+export const markItemCompleted = async (req, res) => {
     try {
       const { itemId } = req.params;
 
-      const checklist = await CheckFormatacao.findById(req.params.id);
+      const checklist = await checkFormattingModel.findById(req.params.id);
 
       if (!checklist) {
         return res.status(404).json({ error: 'Checklist de formatação não encontrado.' });

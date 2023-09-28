@@ -4,30 +4,22 @@ const app = express();
 
 app.use(express.json());
 
-import rootRoute from "./routes/root.js";
-import registroRoute from "./routes/registro.js";
-import conecteRoute from "./routes/conecte.js";
-import inicioRoute from "./routes/inicio.js";
-import checklistRoute from "./routes/check-list.js";
-import checklistformatacaoRoute from "./routes/check-list-formatacao.js";
-import apostilasRoute from "./routes/apostilas.js";
-import tutoriaisRoute from "./routes/tutoriais.js";
+import homeRoute from "./routes/home.js";
+import registerRoute from "./routes/authentication/register.js";
+import loginRoute from "./routes/authentication/login.js";
+import homebolsistaRoute from "./routes/pages/home-bolsistas.js";
+import handoutsRoute from "./routes/pages/handouts.js";
+import tutorialsRoute from "./routes/pages/tutorials.js";
+import checknewuserRoute from "./routes/api/checklists/newuser.js";
+import checkformattingRoute from "./routes/api/checklists/formatting.js";
 
-app.use('/', rootRoute);
-app.use('/registro', registroRoute);
-app.use('/conecte', conecteRoute);
-app.use('/inicio', inicioRoute);
-app.use('/check-list', checklistRoute);
-app.use('/check-list-formatacao', checklistformatacaoRoute);
-app.use('/apostilas', apostilasRoute);
-app.use('/tutoriais', tutoriaisRoute);
-
-import usuarioRoutes from './routes/usuarioRoutes.js'
-import checkFormatacaoRoutes from './routes/checklist-formatacaoRoutes.js'
-import checkNovoUsuarioRoutes from './routes/checklist-novousuarioRoutes.js';
-
-app.use('/api/usuarios', usuarioRoutes);
-app.use('/api/checklist-formatacao', checkFormatacaoRoutes);
-app.use('/api/checklist-novousuario', checkNovoUsuarioRoutes);
+app.use('/', homeRoute);
+app.use('/authentication/register', registerRoute);
+app.use('/authentication/login', loginRoute);
+app.use('/pages/home-bolsistas', homebolsistaRoute);
+app.use('/pages/handouts', handoutsRoute);
+app.use('/pages/tutorials', tutorialsRoute);
+app.use('/api/checklists/newuser', checknewuserRoute);
+app.use('/api/checklists/formatting', checkformattingRoute);
 
 export default app;

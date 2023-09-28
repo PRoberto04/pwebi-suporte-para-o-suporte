@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 import '../../config/database.js';
 
-const usuarioSchema = new mongoose.Schema({
-    nome: {
+const userSchema = new mongoose.Schema({
+    name: {
         type: String,
         required: true
     },
@@ -11,7 +11,7 @@ const usuarioSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    senha: {
+    password: {
         type: String,
         required: true
     },
@@ -26,6 +26,6 @@ const usuarioSchema = new mongoose.Schema({
     }
 });
 
-const Usuario = mongoose.model('Usuario', usuarioSchema);
+const userModel = mongoose.model('userModel', userSchema);
 
-export default Usuario;
+export default userModel;
