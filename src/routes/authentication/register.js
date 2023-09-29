@@ -1,8 +1,13 @@
-import express from "express";
+import express from 'express';
 const router = express.Router();
 
-router.get('/', (req, res) =>{
-    console.log("A rota de registro está Ok!");
+router.get('/register', (req, res) => {
+  // Implemente a lógica para renderizar o formulário de registro
+});
+
+// Rota para processar o registro do usuário
+router.post('/register', (req, res) => {
+  // Implemente a lógica para processar o registro do usuário
 });
 
 export default router;
