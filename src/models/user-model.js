@@ -18,11 +18,11 @@ const userSchema = new mongoose.Schema({
 
     achievementChecklist: {
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'CheckNovoUsuario'
+        ref: 'checknewuser'
     },
     computerSetupChecklist: {
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'CheckFormatacao'
+        ref: 'checkformatting'
     }
 });
 

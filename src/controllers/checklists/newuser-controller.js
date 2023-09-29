@@ -5,10 +5,8 @@ export const createCheckNewUser = async (req, res) => {
         const { title, items} = req.body;
         
         if (!title || !items || !Array.isArray(items)) {
-            return res.status(400).json({
-                error: 'Dados inválidos'
-            })
-        };
+            return res.status(400).json({ error: 'Dados inválidos' });
+        }
 
         const newCheckNewUser = new checkNewUserModel({ title, items });
 
@@ -18,7 +16,7 @@ export const createCheckNewUser = async (req, res) => {
 
     } catch (error) {
         
-        console.error('Erro ao criar o checklist de novo usuário');
+        console.error('Erro ao criar o checklist de novo usuário', error);
         res.status(500).json({ error: 'Ocorreu um erro interno ao criar o checklist de novo usuário'});
     }
 };

@@ -5,9 +5,7 @@ export const createCheckFormatting = async (req, res) => {
         const { title, items } = req.body;
         
         if (!title || !items || !Array.isArray(items)) {
-            return res.status(400).json({
-                error: 'Dados inválidos'
-            });
+            return res.status(400).json({ error: 'Dados inválidos' });
         }
 
         const newCheckFormatting = new checkFormattingModel({ title, items });
