@@ -1,15 +1,17 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import bodyParser from 'body-parser';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json())
-app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
 import homeRoute from "./routes/home.js";
 import registerRoute from "./routes/authentication/register.js";
