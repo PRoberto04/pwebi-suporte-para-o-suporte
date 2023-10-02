@@ -11,7 +11,7 @@ export const createUser = async (req, res) => {
         const existingUser = await userModel.findOne({ email });
 
         if (existingUser) {
-            return res.status(409).json({ error: ' Já existe um usuário com este email' });
+            return res.status(409).render('error409');
         }
 
         const newUser = new userModel({ name, email, password});
@@ -23,7 +23,7 @@ export const createUser = async (req, res) => {
     } catch (error) {
         
         console.error('Erro ao criar o usuário', error);
-        res.status(500).json({ error: 'Ocorreu um erro interno ao criar o usuário'})
+       res.status(500).render('error500');
     }
 };
 
@@ -34,7 +34,7 @@ export const listUsers = async(req, res) => {
         res.status(200).json(users);
 
     } catch (error) {
-        res.status(500).json({ error: 'Erro interno ao listar usuários'})
+       res.status(500).render('error500');
     }
 };
 
@@ -43,15 +43,13 @@ export const detailUser = async(req, res) => {
         const user = await userModel.findById(req.params.id);
 
         if (!user) {
-            return res.status(404).json({
-                error: 'Usuario não encontrado.'
-            });
+            return res.status(404).json({ error: 'Usuario não encontrado.' });
         };
 
         res.status(200).json(user);
     } catch (error) {
 
-        res.status(500).json({ error: 'Ocorreu um erro interno ao buscar o usuário'})
+       res.status(500).render('error500');
     }
 };
 
@@ -71,7 +69,7 @@ export const toUpdateUser = async (req, res) => {
         res.status(200).json(updatedUser);
 
     } catch (error) {
-        res.status(500).json({ error: 'Ocorreu um erro interno ao atualizar o usuário'})
+       res.status(500).render('error500');
     }
 };
 
@@ -86,6 +84,6 @@ export const deleteUser = async (req, res) => {
         res.status(204).send();
         
     } catch (error) {
-        res.status(500).json({ error: 'Ocorreu um erro interno ao excluir o usuário'})
+       res.status(500).render('error500');
     }
 };
