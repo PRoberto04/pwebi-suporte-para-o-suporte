@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 
   } catch (error) {
     console.error('Erro ao processar o login:', error);
-    res.status(500).render('login', { error: 'Erro interno ao processar o login' });
+    res.status(500).render('error500');
   }
 });
 
