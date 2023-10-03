@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 
 router.get('/', (req, res) =>{
-    console.log("A rota inicial está Ok!");
+    res.render('home');
 });
 
 export default router;

@@ -13,7 +13,13 @@ router.post('/', async (req, res) => {
 
     const user = await userModel.findOne({ email });
 
-    if (!user || !user.comparePassword(password)) {
+    const passwordMatch = await userModel.findOne( { password })
+
+    if (!user) {
+      return res.status(401).render('error401');
+    }
+
+    if(!passwordMatch){
       return res.status(401).render('error401');
     }
 

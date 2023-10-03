@@ -23,8 +23,8 @@ import checknewuserRoute from "./routes/api/checklists/newuser.js";
 import checkformattingRoute from "./routes/api/checklists/formatting.js";
 
 app.use('/', homeRoute);
-app.use('/authentication/register', registerRoute);
-app.use('/authentication/login', loginRoute);
+app.use('/auth/register', registerRoute);
+app.use('/auth/login', loginRoute);
 app.use('/pages/home-bolsistas', homebolsistaRoute);
 app.use('/pages/handouts', handoutsRoute);
 app.use('/pages/tutorials', tutorialsRoute);
