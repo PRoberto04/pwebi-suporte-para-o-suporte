@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 const uri = "mongodb+srv://paulorcarlos23:Roberto23@suportepsuportecluster.u2oar9u.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
 
 
@@ -20,5 +20,6 @@ db.on('error', (err) => {
 db.on('disconnected', () => {
     console.log('Conexão com o MongoDB desconectada');
 });
+
 
 export default mongoose;

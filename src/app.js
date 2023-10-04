@@ -1,4 +1,6 @@
 import express from 'express';
+import session from 'express-session';
+import flash from 'express-flash';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import bodyParser from 'body-parser';
@@ -7,6 +9,28 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+function generateSessionSecret(length) {
+    const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let secret = '';
+  
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * charset.length);
+      secret += charset[randomIndex];
+    }
+  
+    return secret;
+  }
+  
+  const sessionSecret = generateSessionSecret(14);
+
+app.use(session({
+    secret: sessionSecret, 
+    resave: true,
+    saveUninitialized: true,
+  }));
+
+app.use(flash());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json())

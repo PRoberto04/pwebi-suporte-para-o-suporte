@@ -29,6 +29,7 @@ router.post('/', async (req, res) => {
     console.error('Erro ao processar o login:', error);
     res.status(500).render('error500');
   }
-});
+  }
+);
 
 export default router;

@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
 
     await newUser.save();
 
-    res.redirect('/authentication/login');
+    res.redirect('/auth/login');
 
   } catch (error) {
     console.error('Erro ao processar o registro:', error);
