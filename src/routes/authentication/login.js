@@ -4,7 +4,7 @@ import googlePassport from '../../auth/googleStrategy-passport.js'; // Importe a
 
 const router = express.Router();
 
-router.post('/local', passport.authenticate('local', { failureRedirect: '/login' }),
+router.post('/local', passport.authenticate('local', { failureRedirect: '../register' }),
   function(req, res) {
     res.redirect('/');
   }
