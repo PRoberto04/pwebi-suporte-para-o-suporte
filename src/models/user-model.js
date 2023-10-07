@@ -9,7 +9,10 @@ const userSchema = new Schema({
     email: { type: String, required: true, unique: true},
     password: { type: String, required: true},
     achievementChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checknewuser'},
-    computerSetupChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checkformatting'}
+    computerSetupChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checkformatting'},
+
+    googleId: { type: String }, 
+    googleName: { type: String }
 });
 
 userSchema.methods.verifyPassword = async function (password) {

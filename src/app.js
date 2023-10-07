@@ -23,7 +23,7 @@ function generateSessionSecret(length) {
     return secret;
   }
 
-  const sessionSecret = generateSessionSecret(14);
+const sessionSecret = generateSessionSecret(14);
 
 app.use(session({ secret: sessionSecret, resave: true, saveUninitialized: true }));
 
@@ -55,6 +55,5 @@ app.use('/pages/handouts', handoutsRoute);
 app.use('/pages/tutorials', tutorialsRoute);
 app.use('/api/checklists/newuser', checknewuserRoute);
 app.use('/api/checklists/formatting', checkformattingRoute);
-
 
 export default app;
