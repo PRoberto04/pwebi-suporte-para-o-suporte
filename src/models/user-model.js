@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import '../../config/database.js';
+import bcrypt from 'bcrypt';
 
 const { Schema } = mongoose;
 
@@ -10,6 +11,14 @@ const userSchema = new Schema({
     achievementChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checknewuser'},
     computerSetupChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checkformatting'}
 });
+
+userSchema.methods.verifyPassword = async function (password) {
+    try {
+      return await bcrypt.compare(password, this.password);
+    } catch (error) {
+      throw error;
+    }
+  };
 
 const userModel = mongoose.model('userModel', userSchema);
 

@@ -4,6 +4,7 @@ import flash from 'express-flash';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import bodyParser from 'body-parser';
+import passport from 'passport';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -24,13 +25,12 @@ function generateSessionSecret(length) {
 
   const sessionSecret = generateSessionSecret(14);
 
-app.use(session({
-    secret: sessionSecret, 
-    resave: true,
-    saveUninitialized: true,
-  }));
+app.use(session({ secret: sessionSecret, resave: true, saveUninitialized: true }));
 
 app.use(flash());
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json())

@@ -1,5 +1,6 @@
 import express from 'express';
 import userModel from '../../models/user-model.js';
+import passport from '../../auth/localStrategy-passport.js';
 
 const router = express.Router();
 
@@ -7,7 +8,12 @@ router.get('/', (req, res) => {
   res.render('login');
 });
 
-router.post('/', async (req, res) => {
+router.post('/', passport.authenticate('local', { failureRedirect: '/login' }),
+function(req, res) {
+  res.redirect('/');
+
+
+/*async (req, res) => {
   try {
     const { email, password } = req.body;
 
@@ -29,7 +35,7 @@ router.post('/', async (req, res) => {
     console.error('Erro ao processar o login:', error);
     res.status(500).render('error500');
   }
-  }
-);
+  } */
+});
 
 export default router;
