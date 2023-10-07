@@ -46,7 +46,6 @@ import handoutsRoute from "./routes/pages/handouts.js";
 import tutorialsRoute from "./routes/pages/tutorials.js";
 import checknewuserRoute from "./routes/api/checklists/newuser.js";
 import checkformattingRoute from "./routes/api/checklists/formatting.js";
-import { rmSync } from 'fs';
 
 app.use('/', homeRoute);
 app.use('/auth/register', registerRoute);
