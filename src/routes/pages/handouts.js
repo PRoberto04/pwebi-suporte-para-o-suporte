@@ -2,7 +2,7 @@ import express from "express";
 const router = express.Router();
 
 router.get('/', (req, res) =>{
-    console.log("A rota apostilas está Ok!");
+    res.render('handouts')
 });
 
 export default router;
