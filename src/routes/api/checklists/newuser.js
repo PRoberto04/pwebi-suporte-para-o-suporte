@@ -17,4 +17,5 @@ router.put('/:id', toUpdatecheckNewUser);
 router.delete('/:id', deleteCheckNewUser);
 router.put('/:id/mark-item/:itemId', markItemCompleted);
 
+//Funcionalidades CRUD para check-list e novo usuário
 export default router;

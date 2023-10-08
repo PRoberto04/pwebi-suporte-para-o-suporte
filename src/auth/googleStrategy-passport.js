@@ -2,6 +2,7 @@ import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import User from '../models/user-model.js';
 
+//Lógica de autenticação com o google usando o passport
 
 passport.use(
   new GoogleStrategy(

@@ -1,5 +1,7 @@
 import checkNewUserModel from '../../models/checklists/newuser-model.js';
 
+//Controlador que fornece as funções CRUD do checklst de novo usuário
+
 export const createCheckNewUser = async (req, res) => {
     try {
         const { title, items} = req.body;

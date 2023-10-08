@@ -15,4 +15,5 @@ router.get('/:id', detailUser);
 router.put('/:id', toUpdateUser);
 router.delete('/:id', deleteUser);
 
+//Funcionalidades CRUD para Usuário
 export default router;

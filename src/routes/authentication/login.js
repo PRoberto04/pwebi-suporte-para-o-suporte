@@ -1,15 +1,20 @@
 import express from 'express';
 import passport from '../../auth/localStrategy-passport.js';
-import googlePassport from '../../auth/googleStrategy-passport.js'; // Importe a estratégia do Google
+import googlePassport from '../../auth/googleStrategy-passport.js'; 
+
+//Rotas de autenticação
 
 const router = express.Router();
 
+//Estratégia local
 router.post('/local', passport.authenticate('local', { failureRedirect: '../register' }),
   function(req, res) {
     res.redirect('/');
   }
 );
 
+//Estratégia de autenticação com google
+//Implementar método para salvar esses usuários que se autnticam pelo google no banco de dados
 router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 router.get('/google/callback',

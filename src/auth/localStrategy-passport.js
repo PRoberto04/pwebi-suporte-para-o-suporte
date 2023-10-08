@@ -2,6 +2,8 @@ import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import User from '../models/user-model.js'; 
 
+//Lógica referente à estratégia local de autenticação usuando o passport
+
 passport.use(new LocalStrategy({
     usernameField: 'email'
   },

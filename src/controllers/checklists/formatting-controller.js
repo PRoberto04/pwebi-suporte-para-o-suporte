@@ -1,5 +1,7 @@
 import checkFormattingModel from '../../models/checklists/formatting-model.js'
 
+//Controlador que fornece as funções CRUD do checklst de formatação
+
 export const createCheckFormatting = async (req, res) => {
     try {
         const { title, items } = req.body;

@@ -2,10 +2,12 @@ import express from 'express';
 import userModel from '../../models/user-model.js';
 const router = express.Router();
 
+//Rota de registro de usuário
 router.get('/', (req, res) => {
   res.render('register');
 });
 
+//Lógica básica para registro de usuário
 router.post('/', async (req, res) => {
   try {
     const { name, email, password } = req.body;

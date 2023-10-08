@@ -4,6 +4,7 @@ import bcrypt from 'bcrypt';
 
 const { Schema } = mongoose;
 
+//Esquema que o mongoose usará para possibilitar a criação de um usuário
 const userSchema = new Schema({
     name: { type: String, required: true},
     email: { type: String, required: true, unique: true},
@@ -15,6 +16,7 @@ const userSchema = new Schema({
     googleName: { type: String }
 });
 
+//Função para verificar se a senha fornecida no input é a mesma armazenada no banco de dados
 userSchema.methods.verifyPassword = async function (password) {
     try {
       return await bcrypt.compare(password, this.password);

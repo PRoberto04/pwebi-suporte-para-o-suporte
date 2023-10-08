@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 const uri = "mongodb+srv://paulorcarlos23:Roberto23@suportepsuportecluster.u2oar9u.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp";
 
+//Arquivo de conexão com o banco de dados
 
 mongoose.connect(uri, {
     useNewUrlParser: true,

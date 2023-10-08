@@ -17,4 +17,5 @@ router.put('/:id', toUpdateCheckFormatting);
 router.delete('/:id', deleteCheckFormatting);
 router.put('/:id/mark-item/:itemId', markItemCompleted);
 
+//Funcionalidades CRUD para check-list de formação
 export default router;

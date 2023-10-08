@@ -32,6 +32,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+//Para visualização tanto documenos .json quanto arquivos .ejs
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json())
 app.set('views', path.join(__dirname, 'views'));
@@ -53,13 +54,14 @@ app.use('/', homeRoute);
 app.use('/auth/register', registerRoute);
 app.use('/auth/login', loginRoute);
 
+// Essas rotas referem a funcionalidades que ainda serão implementadas
 app.use('/api/checklists/newuser', checknewuserRoute);
 app.use('/api/checklists/formatting', checkformattingRoute);
 
+//Essas rotas referem-se a páginas em que os usuários poderão acessar às funcionalidades
 app.use('/page/home-bolsistas', homebolsistaRoute);
 app.use('/page/handouts', handoutsRoute);
 app.use('/page/tutorials', tutorialsRoute);
 app.use('/page/checklists', checkliistsRoute);
-
 
 export default app;
