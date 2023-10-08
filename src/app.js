@@ -45,6 +45,7 @@ import loginRoute from "./routes/authentication/login.js";
 import homebolsistaRoute from "./routes/pages/home-bolsistas.js";
 import handoutsRoute from "./routes/pages/handouts.js";
 import tutorialsRoute from "./routes/pages/tutorials.js";
+import checkliistsRoute from "./routes/pages/checklists.js";
 import checknewuserRoute from "./routes/api/checklists/newuser.js";
 import checkformattingRoute from "./routes/api/checklists/formatting.js";
 
@@ -54,6 +55,7 @@ app.use('/auth/login', loginRoute);
 app.use('/page/home-bolsistas', homebolsistaRoute);
 app.use('/page/handouts', handoutsRoute);
 app.use('/page/tutorials', tutorialsRoute);
+app.use('/page/checklists', checkliistsRoute);
 app.use('/api/checklists/newuser', checknewuserRoute);
 app.use('/api/checklists/formatting', checkformattingRoute);
 
