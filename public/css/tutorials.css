@@ -176,7 +176,7 @@ main {
 /*PADRÃO END*/
 
 /* Estilos para o título no topo */
-.titulo2 {
+.pagetitle {
     text-align: center;
     font-size: 24px;
     margin-top: 20px;
@@ -190,7 +190,7 @@ main {
   }
   
   /* Estilos para cada quadro */
-  .item2 {
+  .cardTutorial {
     border: 1px solid #a41313;
     padding: 20px;
     text-align: center;
@@ -198,7 +198,7 @@ main {
   }
   
   /* Estilos para a imagem */
-  .item2 img {
+  .cardTutorial img {
     max-width: 100%;
     max-height: 100px; /* Ajuste a altura máxima conforme necessário */
   }
