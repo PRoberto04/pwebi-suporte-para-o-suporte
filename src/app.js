@@ -38,6 +38,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/../public'));
 
+
 import homeRoute from "./routes/home.js";
 import registerRoute from "./routes/authentication/register.js";
 import loginRoute from "./routes/authentication/login.js";
@@ -50,9 +51,9 @@ import checkformattingRoute from "./routes/api/checklists/formatting.js";
 app.use('/', homeRoute);
 app.use('/auth/register', registerRoute);
 app.use('/auth/login', loginRoute);
-app.use('/pages/home-bolsistas', homebolsistaRoute);
-app.use('/pages/handouts', handoutsRoute);
-app.use('/pages/tutorials', tutorialsRoute);
+app.use('/page/home-bolsistas', homebolsistaRoute);
+app.use('/page/handouts', handoutsRoute);
+app.use('/page/tutorials', tutorialsRoute);
 app.use('/api/checklists/newuser', checknewuserRoute);
 app.use('/api/checklists/formatting', checkformattingRoute);
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/loginAndregister.css">
     
     <title>Register</title>
 </head>
@@ -17,24 +17,6 @@
             <div id="form_header">
                 <h1>Registro</h1>
                 <i id="mode_icon" class="fa-solid fa-moon"></i>
-            </div>
-
-            <!-- SOCIAL MEDIA LINKS -->
-            <div id="social_media">
-                <!-- FACEBOOK -->
-                <a href="#">
-                    <img src="/images/facebook.png" alt="">
-                </a>
-
-                <!-- GOOGLE -->
-                <a href="#">
-                    <img src="/images/google.png" alt="Google logo">
-                </a>
-                
-                <!-- GITHUB -->
-                <a href="#">
-                    <img src="/images/github.png" alt="">
-                </a>
             </div>
 
             <!-- INPUTS -->
@@ -70,22 +52,26 @@
                             <input type="password" id="password" name="password" required>
                         </div>
                     </label>
-                    
-                    <!-- FORGOT PASSWORD 
-                    <div id="forgot_password">
-                        <a href="#">
-                            Forgot your password?
-                        </a>
-                    </div>  -->
+   
+                    </div>
                 </div>
-            </div>
+                
+                <!-- LOGIN BUTTON -->
+                <button type="submit" id="login_button">
+                    Registrar
+                </button>
 
-            <!-- LOGIN BUTTON -->
-            <button type="submit" id="login_button">
-                Registrar
-            </button>
-        </form>
-    </main>
+                <!-- SOCIAL MEDIA LINKS -->
+                <div id="social_media">
+                
+                    <!-- GOOGLE -->
+                    <a href="/auth/login/google">
+                        <img src="/images/google.png" alt="Google logo">
+                    </a>
+                    
+                </div>
+            </form>
+        </main>
 
     <!-- JAVASCRIPT -->
     <script type="text/javascript" src="/js/script.js"></script>
