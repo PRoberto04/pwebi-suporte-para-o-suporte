@@ -52,11 +52,14 @@ import checkformattingRoute from "./routes/api/checklists/formatting.js";
 app.use('/', homeRoute);
 app.use('/auth/register', registerRoute);
 app.use('/auth/login', loginRoute);
+
+app.use('/api/checklists/newuser', checknewuserRoute);
+app.use('/api/checklists/formatting', checkformattingRoute);
+
 app.use('/page/home-bolsistas', homebolsistaRoute);
 app.use('/page/handouts', handoutsRoute);
 app.use('/page/tutorials', tutorialsRoute);
 app.use('/page/checklists', checkliistsRoute);
-app.use('/api/checklists/newuser', checknewuserRoute);
-app.use('/api/checklists/formatting', checkformattingRoute);
+
 
 export default app;
