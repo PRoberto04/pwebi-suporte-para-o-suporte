@@ -29,11 +29,25 @@ Certifique-se de ter uma conexão à Internet ativa durante o processo de instal
 
 ### Clonando o Repositório
 
-Abra o terminal (prompt de comando no Windows) e navegue até o diretório onde você deseja clonar o repositório. Em seguida, execute o seguinte comando para clonar o repositório:
+Abra o terminal (prompt de comando no Windows) e navegue até o diretório onde você deseja clonar o repositório. 
+
+```bash
+cd /caminho/do/seu/diretorio
+```
+
+Em seguida, execute o seguinte comando para clonar o repositório:
 
 ```bash
 git clone https://github.com/PRoberto04/pwebi-suporte-para-o-suporte.git
 ```
+### Acessando o Diretório do Projeto
+
+Navegue para o diretório do projeto clonado:
+
+```bash
+cd <nome_do_diretorio>
+```
+
 
 ## Uso
 
