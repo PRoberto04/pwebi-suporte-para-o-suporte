@@ -45,13 +45,31 @@ git clone https://github.com/PRoberto04/pwebi-suporte-para-o-suporte.git
 Navegue para o diretório do projeto clonado:
 
 ```bash
-cd <nome_do_diretorio>
+cd /caminho/do/seu/diretorio
+```
+Agora você já está no repositório, continue;
+
+### Instalando as Dependências
+Execute o comando a seguir para instalar todas as dependências listadas no arquivo package.json:
+
+```bash
+npm install
 ```
 
+Isso instalará todas as bibliotecas e módulos necessários para o projeto.
 
-## Uso
+### Executando o Projeto
+Agora você pode iniciar o projeto com o seguinte comando:
 
-Explique como usar o seu projeto, incluindo comandos específicos, configurações e exemplos de uso. Se possível, forneça exemplos de código.
+```bash
+npm start
+```
+
+O projeto será iniciado e estará acessível em um navegador da web em `http://localhost:3000/`.
+
+### Acessando o Projeto
+
+Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o projeto.
 
 ## Estrutura do Projeto
 
