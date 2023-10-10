@@ -11,7 +11,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="/page/home-bolsistas" class="active"><span class="las la-home"></span>
+                    <a href="/page/home-bolsistas"><span class="las la-home"></span>
                     <span>Home</span></a>
                 </li>
                 <li>
@@ -43,3 +43,16 @@
             </ul>
         </div>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var url = window.location.pathname; // obtém o caminho da URL atual
+            $('.sidebar-menu a').each(function() {
+                var href = $(this).attr('href');
+                if (url === href) {
+                    $(this).addClass('active'); // adiciona a classe 'active' ao link correspondente
+                }
+            });
+        });
+    </script>
