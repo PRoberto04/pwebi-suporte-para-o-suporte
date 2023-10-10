@@ -153,4 +153,6 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 - [ ] Arquivo de visualização da página inicial
 - [ ] Salvar as informações dos usuários que utilizam a autenticação do Google no banco de dados
 - [ ] Implementar token de verificação
-
+- [ ] Implementar checklist com poup-up
+- [ ] Salvar os checklists no banco de dados
+- [ ] Fazer com que o checklist novato desapareça após ser concluído
