@@ -73,24 +73,84 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
 
 ## Estrutura do Projeto
 
-Descreva a estrutura de pastas e arquivos do seu projeto, para que os usuários possam navegar facilmente e entender onde encontrar cada parte do código.
+- `/config`: Configurações do projeto.
+  - `database.js`: Arquivo de configuração do banco de dados.
+  - `nodemon.js`: Configurações para o Nodemon.
 
-## Contribuição
+- `/public`: Recursos públicos do projeto.
+  - `/css`: Estilos CSS.
+    - `checklists.css`: Estilos para a página de checklists.
+    - `handouts.css`: Estilos para a página de handouts.
+    - `home-bolsistas.css`: Estilos para a página de home de bolsistas.
+    - `loginAndRegister.css`: Estilos para as páginas de login e registro.
+    - `tutorials.css`: Estilos para a página de tutoriais.
+  - `/images`: Imagens usadas no projeto.
+    - `calvo.png`: Imagem do Calvo -> representante da TI.
+    - `google.png`: Imagem do Google.
+    - `pc.png`: Imagem de um computador.
+    - `v1.png`: Imagem versão 1.
+    - `v2.png`: Imagem versão 2.
+    - `v3.png`: Imagem versão 3.
+    - `v4.png`: Imagem versão 4.
+  - `/js`: Scripts JavaScript.
+    - `script.js`: Arquivo JavaScript principal.
 
-Explique como outros desenvolvedores podem contribuir com o seu projeto. Isso pode incluir informações sobre como relatar problemas (issues), solicitar novos recursos (feature requests) e enviar pull requests.
+- `/src`: Código-fonte do projeto.
+  - `/auth`: Autenticação do projeto.
+    - `localStrategy-passport.js`: Estratégia de autenticação local (Passport).
+    - `googleStrategy-passport.js`: Estratégia de autenticação do Google (Passport).
+  - `/controllers`: Controladores do projeto.
+    - `/checklists`: Controladores para checklists.
+      - `formatting-controller.js`: Controlador para o checklist de formatação.
+      - `newuser-controller.js`: Controlador para o checklist de novos usuários.
+    - `user-controller.js`: Controlador de usuários.
+  - `/models`: Modelos de dados do projeto.
+    - `/checklists`: Modelos de dados relacionados a checklists.
+      - `formatting-model.js`: Modelo de dados para o checklist de formatação.
+      - `newuser-model.js`: Modelo de dados para o checklist de novos usuários.
+    - `user-model.js`: Modelo de dados de usuários.
+  - `/routes`: Rotas do projeto.
+    - `/api`: Rotas da API.
+      - `/checklists`: Rotas relacionadas a checklists.
+        - `formatting.js`: Rota para o checklist de formatação.
+        - `newuser.js`: Rota para o checklist de novos usuários.
+      - `user.js`: Rota de usuário.
+    - `/authentication`: Rotas de autenticação.
+      - `login.js`: Rota de login.
+      - `register.js`: Rota de registro.
+    - `/pages`: Rotas para páginas.
+      - `handouts.js`: Rota para a página de handouts.
+      - `home-bolsistas.js`: Rota para a página de home de bolsistas.
+      - `tutorials.js`: Rota para a página de tutoriais.
+      - `checklists.js`: Rota para a página de checklists.
+    - `home.js`: Rota para a página inicial.
 
-## Autores
+  - `/views`: Visualizações do projeto.
+    - `/error`: Páginas de erro.
+      - `error401.ejs`: Página de erro 401.
+      - `error409.ejs`: Página de erro 409.
+      - `error500.ejs`: Página de erro 500.
+    - `/partials`: Partes reutilizáveis das visualizações.
+      - `sidebar.ejs`: Barra lateral reutilizável.
+      - `header.ejs`: Cabeçalho reutilizável.
+    - `login.ejs`: Página de login.
+    - `register.ejs`: Página de registro.
+    - `home-bolsistas.ejs`: Página de home de bolsistas.
+    - `checklists.ejs`: Página de checklists.
+    - `tutorials.ejs`: Página de tutoriais.
+    - `handouts.ejs`: Página de handouts.
 
-Liste os autores e contribuidores do projeto, se houver. Inclua links para os perfis de redes sociais ou sites pessoais, se desejado.
+- `/app.js`: Arquivo principal do aplicativo.
+- `/server.js`: Arquivo principal do servidor.
+
 
 ## Licença
 
-Informe a licença sob a qual o seu projeto está disponível. Você pode usar uma licença open-source padrão, como MIT ou Apache, ou escolher outra licença que melhor se aplique às suas necessidades.
+Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 
-## Agradecimentos
+## Tarefas para a Versão 1.0.0
 
-Agradeça a qualquer pessoa, equipe ou projeto que tenha contribuído de alguma forma para o seu projeto.
+- [ ] Arquivo de visualização da página inicial
+- [ ] Salvar as informações dos usuários que utilizam a autenticação do Google no banco de dados
+- [ ] Implementar token de verificação
 
-## Recursos Adicionais
-
-Se você tiver documentação técnica, links para a documentação da API, tutoriais ou qualquer outro recurso adicional, adicione-os nesta seção.
