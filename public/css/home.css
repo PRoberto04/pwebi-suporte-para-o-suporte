@@ -1,6 +1,6 @@
 /* Estilo para o fundo de imagem borrada */
 body {
-    background-image: url('ifce.jpg');
+    background-image: url('/images/ifce.jpg');
     background-size: cover;
     height: 100vh;
     margin: 0;

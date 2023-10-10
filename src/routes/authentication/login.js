@@ -6,10 +6,14 @@ import googlePassport from '../../auth/googleStrategy-passport.js';
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+  res.render('login');
+});
+
 //Estratégia local
 router.post('/local', passport.authenticate('local', { failureRedirect: '../register' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect('/page/home-bolsistas');
   }
 );
 
@@ -19,18 +23,18 @@ router.get('/google', passport.authenticate('google', { scope: ['profile', 'emai
 
 router.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
+  function(req, res, next) {
+    return next;
   }
 );
+router.post('/', (req, res) =>{
+  res.redirect('/page/home-bolsistas');
+});
 
 router.get('/logout', (req, res) => {
   req.logout(); 
   res.redirect('/');
 });
 
-router.get('/', (req, res) => {
-  res.render('login');
-});
 
 export default router;
