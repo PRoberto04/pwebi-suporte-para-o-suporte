@@ -36,7 +36,7 @@
     background: var(--color-gradient);
 }
 
-#register_form {
+#_form {
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -150,14 +150,14 @@
 }
 
 /* Dark Mode */
-.dark#register_form {
+.dark#_form {
     color: var(--color-light-50);
     background-color: var(--color-dark-100);
     animation: light-to-dark-background 0.3s ease-in-out;
 }
 
-.dark#register_form .input-field input,
-.dark#register_form .input-field i {
+.dark#_form .input-field input,
+.dark#_form .input-field i {
     color: var(--color-light-50);
 }
 

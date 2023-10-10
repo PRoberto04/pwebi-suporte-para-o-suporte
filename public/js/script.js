@@ -1,7 +1,7 @@
 const mode = document.getElementById('mode_icon');
 
 mode.addEventListener('click', () => {
-    const form = document.getElementById('login_form');
+    const form = document.getElementById('_form');
 
     if(mode.classList.contains('fa-moon')) {
         mode.classList.remove('fa-moon');
