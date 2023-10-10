@@ -1,0 +1,59 @@
+/* Estilo para o fundo de imagem borrada */
+body {
+    background-image: url('ifce.jpg');
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Estilo para o conteúdo no centro */
+.content {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Cantos arredondados */
+}
+
+.content p{
+    color:white;
+    font-size: 20px;
+
+}
+
+/* Estilo para o botão de link */
+.link-button {
+    background-color: #3C963A;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Estilo para o botão de login e registro */
+.login-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #3C963A;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Estilo para a logo no canto superior esquerdo */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
