@@ -2,14 +2,12 @@ import passport from 'passport';
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
 import User from '../models/user-model.js';
 
-//Lógica de autenticação com o google usando o passport
-
 passport.use(
   new GoogleStrategy(
     {
       clientID: '67287265811-p3g1ue77qv3nh3j35joeah3e309nq68j.apps.googleusercontent.com',
       clientSecret: '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',
-      callbackURL: 'http://localhost:3000/auth/google/callback'
+      callbackURL: 'http://localhost:3000/oauth2/redirect/google'
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
