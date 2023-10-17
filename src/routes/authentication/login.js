@@ -1,23 +1,18 @@
 import express from 'express';
-import passport from '../../auth/googleStrategy-passport.js'; // Importe a estratégia do Google
+import passport from 'passport';
+import '../../auth/google.js';
+
 
 const router = express.Router();
-
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-
-router.get('/oauth2/redirect/google', passport.authenticate('google', 
-  { successRedirect: '/page/home-bolsistas',
-    failureRedirect: '/login', 
-    failureMessage: true })
-);
-
-router.get('/logout', (req, res) => {
-  req.logout(); 
-  res.redirect('/');
-});
 
 router.get('/', (req, res) => {
   res.render('login');
 });
+
+router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }, { successRedirect: '/', failureRedirect: '/login' })(req, res));
+
+router.get('/google/callback', passport.authenticate('google', function (req, res) {
+  res.redirect('/page/home-bolsistas'); 
+}));
 
 export default router;
