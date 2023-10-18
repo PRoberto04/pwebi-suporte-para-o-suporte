@@ -9,10 +9,11 @@ router.get('/', (req, res) => {
   res.render('login');
 });
 
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }, { successRedirect: '/', failureRedirect: '/login' })(req, res));
+router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-router.get('/google/callback', passport.authenticate('google', function (req, res) {
-  res.redirect('/page/home-bolsistas'); 
-}));
+router.get('/auth/google/callback', passport.authenticate('google', {
+    failureRedirect: '/auth/login',
+    successRedirect: '/page/home-bolsistas'
+  }));
 
 export default router;
