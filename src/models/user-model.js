@@ -11,12 +11,22 @@ const userSchema = new Schema({
     password: { type: String, required: true},
     achievementChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checknewuser'},
     computerSetupChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checkformatting'},
-
-    googleId: { type: String }, 
-    googleName: { type: String }
 });
 
-//Função para verificar se a senha fornecida no input é a mesma armazenada no banco de dados
+// Função para criptografar a senha antes de salvar no banco de dados
+userSchema.pre('save', async function(next) {
+  if (this.isModified('password')) {
+      try {
+          const salt = await bcrypt.genSalt(10);
+          this.password = await bcrypt.hash(this.password, salt);
+      } catch (error) {
+          return next(error);
+      }
+  }
+  return next();
+});
+
+//Função para verificar se a senha fornecida pelo usuário é a mesma armazenada no banco de dados
 userSchema.methods.verifyPassword = async function (password) {
     try {
       return await bcrypt.compare(password, this.password);
