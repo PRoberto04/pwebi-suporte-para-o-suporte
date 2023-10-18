@@ -20,7 +20,7 @@ passport.use(
             if (!foundUser.verifyPassword(password)) {
                 return done(null, false);
             }
-            return done(nulll, foundUser);
+            return done(null, foundUser);
         } catch (err) {
             return done(err);
         }
