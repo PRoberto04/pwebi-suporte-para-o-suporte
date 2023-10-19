@@ -28,12 +28,13 @@ userSchema.pre('save', async function(next) {
 
 //Função para verificar se a senha fornecida pelo usuário é a mesma armazenada no banco de dados
 userSchema.methods.verifyPassword = async function (password) {
-    try {
-      return await bcrypt.compare(password, this.password);
-    } catch (error) {
-      throw error;
-    }
-  };
+  try {
+    const isMatch = await bcrypt.compare(password, this.password);
+    return isMatch;
+  } catch (error) {
+    throw new Error('Erro na verificação da senha: ' + error.message);
+  }
+    };
 
 const userModel = mongoose.model('userModel', userSchema);
 
