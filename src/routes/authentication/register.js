@@ -15,7 +15,7 @@ router.post('/', async (req, res) => {
     const existingUser = await userModel.findOne({ email });
 
     if (existingUser) {
-      return res.status(409).render('error409');
+      return res.status(409).render('error/error409');
     }
 
     const newUser = new userModel({ name, email, password });
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
 
   } catch (error) {
     console.error('Erro ao processar o registro:', error);
-    res.status(500).render('error500'); 
+    res.status(500).render('error/error500'); 
   }
 });
 
