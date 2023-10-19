@@ -96,9 +96,6 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
     - `script.js`: Arquivo JavaScript principal.
 
 - `/src`: Código-fonte do projeto.
-  - `/auth`: Autenticação do projeto.
-    - `localStrategy-passport.js`: Estratégia de autenticação local (Passport).
-    - `googleStrategy-passport.js`: Estratégia de autenticação do Google (Passport).
   - `/controllers`: Controladores do projeto.
     - `/checklists`: Controladores para checklists.
       - `formatting-controller.js`: Controlador para o checklist de formatação.
@@ -116,7 +113,7 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
         - `newuser.js`: Rota para o checklist de novos usuários.
       - `user.js`: Rota de usuário.
     - `/authentication`: Rotas de autenticação.
-      - `login.js`: Rota de login.
+      - `login.js`: Rota de login -> contém também a lógica de autenticação.
       - `register.js`: Rota de registro.
     - `/pages`: Rotas para páginas.
       - `handouts.js`: Rota para a página de handouts.
@@ -150,9 +147,8 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 
 ## Tarefas para a Versão 1.0.0
 
-- [ ] Arquivo de visualização da página inicial
-- [ ] Salvar as informações dos usuários que utilizam a autenticação do Google no banco de dados
 - [ ] Implementar token de verificação
 - [ ] Implementar checklist com poup-up
 - [ ] Salvar os checklists no banco de dados
 - [ ] Fazer com que o checklist novato desapareça após ser concluído
+- [ ] Implementar autenticação com o Google
