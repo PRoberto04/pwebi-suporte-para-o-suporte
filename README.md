@@ -19,9 +19,6 @@ Além disso, este projeto utiliza as seguintes dependências, que serão instala
 - **express-flash** (v0.0.2): Middleware para exibição de mensagens flash em páginas da web.
 - **express-session** (v1.17.3): Middleware para gerenciar sessões de usuário.
 - **mongoose** (v7.5.3): Biblioteca para interagir com o MongoDB.
-- **passport** (v0.6.0): Middleware de autenticação para Node.js.
-- **passport-google-oauth20** (v2.0.0): Estratégia de autenticação do Passport para autenticação com o Google.
-- **passport-local** (v1.0.0): Estratégia de autenticação do Passport para autenticação local.
 
 Certifique-se de ter uma conexão à Internet ativa durante o processo de instalação, pois o npm (gerenciador de pacotes do Node.js) buscará e baixará as dependências automaticamente.
 
