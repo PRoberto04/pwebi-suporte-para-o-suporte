@@ -1,5 +1,5 @@
 import express from 'express';
-import userModel from '../../models/user-model.js';
+import { createUser } from '../../controllers/user-controller.js';
 const router = express.Router();
 
 //Rota de registro de usuário
@@ -8,26 +8,6 @@ router.get('/', (req, res) => {
 });
 
 //Lógica básica para registro de usuário
-router.post('/', async (req, res) => {
-  try {
-    const { name, email, password } = req.body;
-
-    const existingUser = await userModel.findOne({ email });
-
-    if (existingUser) {
-      return res.status(409).render('error/error409');
-    }
-
-    const newUser = new userModel({ name, email, password });
-
-    await newUser.save();
-
-    res.redirect('/auth/login');
-
-  } catch (error) {
-    console.error('Erro ao processar o registro:', error);
-    res.status(500).render('error/error500'); 
-  }
-});
+router.post('/', createUser);
 
 export default router;
