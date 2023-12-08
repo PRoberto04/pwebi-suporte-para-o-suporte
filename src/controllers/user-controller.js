@@ -1,7 +1,5 @@
 import userModel from '../models/user-model.js';
 
-//Controlador que fornece as funções CRUD do usuário
-
 export const createUser = async (req, res) => {
     try {
         const {name, email, password} = req.body;
