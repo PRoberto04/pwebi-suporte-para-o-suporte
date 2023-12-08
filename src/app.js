@@ -72,16 +72,10 @@ import homebolsistaRoute from "./routes/pages/home-bolsistas.js";
 import handoutsRoute from "./routes/pages/handouts.js";
 import tutorialsRoute from "./routes/pages/tutorials.js";
 import checkliistsRoute from "./routes/pages/checklists.js";
-import checknewuserRoute from "./routes/api/checklists/newuser.js";
-import checkformattingRoute from "./routes/api/checklists/formatting.js";
 
 app.use("/", homeRoute);
 app.use("/auth/register", registerRoute);
 app.use("/auth/login", loginRoute);
-
-// Essas rotas referem a funcionalidades que ainda serão implementadas
-app.use("/api/checklists/newuser", checknewuserRoute);
-app.use("/api/checklists/formatting", checkformattingRoute);
 
 //Essas rotas referem-se a páginas em que os usuários poderão acessar às funcionalidades
 app.use("/page/home-bolsistas", homebolsistaRoute);
