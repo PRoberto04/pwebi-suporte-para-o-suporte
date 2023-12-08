@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import '../../../config/database.js';
+import '../app.js';
 const { Schema } = mongoose;
 
 //Esquemas que o mongoose usará para a criação dos itens e do checklist

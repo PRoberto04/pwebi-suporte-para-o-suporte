@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import '../../config/database.js';
+import '../app.js';
 import bcrypt from 'bcrypt';
 
 const { Schema } = mongoose;
