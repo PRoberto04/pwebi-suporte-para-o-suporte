@@ -1,32 +1,18 @@
+<!-- views/profile.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
 </head>
 <body>
-  <h1>Formulário</h1>
-  <form action="/submit" method="post">
-    <label for="username">Nome de Usuário:</label>
-    <input type="text" id="username" name="username" required>
-
-    <br>
-
-    <label for="shift">Turno de Trabalho:</label>
-    <select id="shift" name="shift" required>
-      <option value="manha">Manhã</option>
-      <option value="tarde">Tarde</option>
-    </select>
-
-    <br>
-
-    <label for="whatsapp">Número de WhatsApp:</label>
-    <input type="text" id="whatsapp" name="whatsapp" required>
-
-    <br>
-
-    <button type="submit">Enviar</button>
-  </form>
+    <h1>User Profile</h1>
+    <p><strong>Name:</strong> <%= user.name %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Turno de Trabalho:</strong> <%= user.turnoTrabalho || 'N/A' %></p>
+    <p><strong>Número de Telefone:</strong> <%= user.numeroTelefone || 'N/A' %></p>
+    <a href="/page/edit-profile">Edit Profile</a>
 </body>
 </html>
