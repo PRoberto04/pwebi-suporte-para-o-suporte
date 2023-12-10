@@ -18,7 +18,14 @@ export const createUser = async (req, res) => {
 
         await newUser.save();
 
-        res.status(201).json(newUser);
+        req.login(newUser, (loginErr) => {
+            if (loginErr) {
+                console.error('Erro ao realizar o login automático:', loginErr);
+                return res.status(500).render('error/error500');
+            }
+
+            return res.redirect('/page/home-bolsistas');
+        });
 
     } catch (error) {
         
