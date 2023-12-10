@@ -11,7 +11,7 @@ export const createUser = async (req, res) => {
         const existingUser = await userModel.findOne({ email });
 
         if (existingUser) {
-            return res.status(409).render('error409');
+            return res.status(409).render('error/error409');
         }
 
         const newUser = new userModel({ name, email, password});
@@ -23,7 +23,7 @@ export const createUser = async (req, res) => {
     } catch (error) {
         
         console.error('Erro ao criar o usuário', error);
-       res.status(500).render('error500');
+       res.status(500).render('error/error500');
     }
 };
 
