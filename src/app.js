@@ -70,6 +70,11 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/../public"));
 
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenticated()){return next()};
+  res.redirect('/auth/login');
+};
+
 import homeRoute from "./routes/home.js";
 import registerRoute from "./routes/authentication/register.js";
 import loginRoute from "./routes/authentication/login.js";
@@ -83,7 +88,7 @@ app.use("/auth/register", registerRoute);
 app.use("/auth/login", loginRoute);
 
 //Essas rotas referem-se a páginas em que os usuários poderão acessar às funcionalidades
-app.use("/page/home-bolsistas", homebolsistaRoute);
+app.use("/page/home-bolsistas",ensureAuthenticated, homebolsistaRoute);
 app.use("/page/handouts", handoutsRoute);
 app.use("/page/tutorials", tutorialsRoute);
 app.use("/page/checklists", checkliistsRoute);
