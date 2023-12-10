@@ -26,7 +26,7 @@ userSchema.pre('save', async function(next) {
   return next();
 });
 
-//Função para verificar se a senha fornecida pelo usuário é a mesma armazenada no banco de dados
+//Função para verificar se a senha fornecida pelo usuário coresponde ao hash armazenado no banco de dados
 userSchema.methods.verifyPassword = async function (candidatepassword) {
   try {
     return await bcrypt.compare(candidatepassword, this.password);
