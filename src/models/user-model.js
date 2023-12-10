@@ -27,12 +27,11 @@ userSchema.pre('save', async function(next) {
 });
 
 //Função para verificar se a senha fornecida pelo usuário é a mesma armazenada no banco de dados
-userSchema.methods.verifyPassword = async function (password) {
+userSchema.methods.verifyPassword = async function (candidatepassword) {
   try {
-    const isMatch = await bcrypt.compare(password, this.password);
-    return isMatch;
+    return await bcrypt.compare(candidatepassword, this.password);
   } catch (error) {
-    throw new Error('Erro na verificação da senha: ' + error.message);
+    throw error;
   }
     };
 
