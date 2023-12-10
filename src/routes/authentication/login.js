@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/password', passport.authenticate('local', {
-  successReturnToOrRedirect: '/page/home-bolsistas',
+  successRedirect: '/page/home-bolsistas',
   failureRedirect: '/auth/login',
   failureMessage: true
 }));
