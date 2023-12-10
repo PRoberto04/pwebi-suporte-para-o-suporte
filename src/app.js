@@ -58,6 +58,11 @@ const sessionOpt = session({
 app.use(sessionOpt);
 app.use(flash());
 
+//Importando e utilizando Passport.js
+import passport from "passport";
+app.use(passport.initialize());
+app.use(passport.session());
+
 //Para visualização tanto documenos .json quanto arquivos .ejs
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());

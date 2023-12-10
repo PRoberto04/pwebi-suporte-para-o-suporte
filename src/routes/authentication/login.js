@@ -1,5 +1,5 @@
 import express from 'express';
-import userModel from '../../models/user-model.js';
+import passport from '../../controllers/passportLocal.js';
 
 const router = express.Router();
 
@@ -8,28 +8,17 @@ router.get('/', (req, res) => {
   res.render('login');
 });
 
-router.post('/', async (req, res) => {
-  try {
-    const { email, password } = req.body;
+router.post('/password', passport.authenticate('local', {
+  successReturnToOrRedirect: '/',
+  failureRedirect: '/auth/login',
+  failureMessage: true
+}));
 
-    const user = await userModel.findOne({ email });
+router.post('/logout', function(req, res, next) {
+  req.logout(function(err) {
+    if(err){ return next(err) };
+    res.redirect('/');
+  });
+});
 
-    const passwordMatch = await userModel.findOne( { password })
-
-    if (!user) {
-      return res.status(401).render('error/error401');
-    }
-
-    if(!passwordMatch){
-      return res.status(401).render('error/error401');
-    }
-
-    res.redirect('/page/home-bolsistas'); 
-
-  } catch (error) {
-    console.error('Erro ao processar o login:', error);
-    res.status(500).render('error/error500');
-  }
-  }
-);
 export default router;
