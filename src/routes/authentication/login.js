@@ -8,9 +8,9 @@ router.get('/', (req, res) => {
   res.render('login');
 });
 
-router.post('/login/password', passport.authenticate('local', {
+router.post('/password', passport.authenticate('local', {
   successReturnToOrRedirect: '/',
-  failureRedirect: '/login',
+  failureRedirect: '/auth/login',
   failureMessage: true
 }));
 
