@@ -3,7 +3,7 @@ import { Strategy as LocalStrategy } from "passport-local";
 import userModel from "../models/user-model.js";
 
 passport.use(new LocalStrategy({usernameField: 'email'},
-    async(email, passport, done) => {
+    async(email, password, done) => {
         try{
             const foundUser = await userModel.findOne({email: email});
             if(!foundUser){return done(null, false)};
@@ -25,7 +25,7 @@ passport.serializeUser(function(userModel, cb){
 });
 
 passport.deserializeUser(function(user, cb){
-    process.nextTick(function(user, cb) {
+    process.nextTick(function() {
         return cb(null, user);
     });
 });
