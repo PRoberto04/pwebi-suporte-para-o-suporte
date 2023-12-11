@@ -8,11 +8,11 @@
     <title>User Profile</title>
 </head>
 <body>
-    <h1>User Profile</h1>
-    <p><strong>Name:</strong> <%= user.name %></p>
-    <p><strong>Email:</strong> <%= user.email %></p>
-    <p><strong>Turno de Trabalho:</strong> <%= user.turnoTrabalho || 'N/A' %></p>
-    <p><strong>Número de Telefone:</strong> <%= user.numeroTelefone || 'N/A' %></p>
-    <a href="/page/edit-profile">Edit Profile</a>
+    <h1>Informações do Usuário</h1>
+    <p>Nome: <%= user.name %></p>
+    <p>Email: <%= user.email %></p>
+    <p>Turno de trabalho: <%= user.workShift %></p>
+    <p>Número de telefone: <%= user.numberTel %></p>
+    <a href="/page/profile/edit">Edit Profile</a>
 </body>
 </html>
