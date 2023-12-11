@@ -51,3 +51,35 @@ export const addNumAndTel = async (req, res) =>{
         res.status(500).render('error/error500');
     }
 }
+
+export const createPassword = async (req, res) => {
+    try {
+        const { password, confirmPassword } = req.body;
+
+        if (password !== confirmPassword) {
+            return res.status(400).json({ erro: 'As senhas não coincidem. Tente novamente.' });
+        }
+
+        const userId = req.user.id;
+        const user = await userModel.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({ erro: 'Usuário não encontrado.' });
+        };
+
+        user.password = password;
+        await user.save();
+
+        req.login(user, (loginErr) => {
+            if (loginErr) {
+                console.error('Erro ao realizar o login automático:', loginErr);
+                return res.status(500).render('error/error500');
+            }
+
+            return res.redirect('/page/home-bolsistas');
+        });
+    } catch (error) {
+        console.error('Erro ao criar a senha do usuário', error);
+        res.status(500).json({ erro: 'Erro interno do servidor' });
+    }
+};
