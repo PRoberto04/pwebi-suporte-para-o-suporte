@@ -2,20 +2,53 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="/css/create-pass.css">
     <title>Criar Senha</title>
 </head>
 <body>
+    <main id="container">
+        <form id="create_form" action="/auth/login/create-password" method="post">
+            <!-- FORM HEADER -->
+            <div id="form_header">
+                <h1>Senha</h1>
+                <!-- <i id="mode_icon" class="fa-solid fa-moon"></i> -->
+            </div>
 
-    <form id="passwordForm" action="/auth/login/create-password" method="post">
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
+            <!-- INPUTS -->
+            <div id="inputs">
+                <!-- PASSWORD -->
+                <div class="input-box">
+                    <label for="password">
+                        Senha
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                    </label>
+                </div>
 
-        <label for="confirmPassword">Confirme a Senha:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="input-box">
+                    <label for="password">
+                        Confirmação de senha
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                    </label>        
+                </div>
+            </div>
 
-        <button type="submit">Criar Senha</button>
-    </form>
+            <!-- LOGIN BUTTON -->
+            <button type="submit" id="button">
+                Confirmar
+            </button>
+        </form>
+    </main>
 
+    <script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>
