@@ -82,6 +82,8 @@ import homebolsistaRoute from "./routes/pages/home-bolsistas.js";
 import handoutsRoute from "./routes/pages/handouts.js";
 import tutorialsRoute from "./routes/pages/tutorials.js";
 import checkliistsRoute from "./routes/pages/checklists.js";
+import profileRoute from './routes/pages/profile.js';
+import profileEditRoute from './routes/pages/profile-edit.js';
 
 app.use("/", homeRoute);
 app.use("/auth/register", registerRoute);
@@ -89,6 +91,8 @@ app.use("/auth/login", loginRoute);
 
 //Essas rotas referem-se a páginas em que os usuários poderão acessar às funcionalidades
 app.use("/page/home-bolsistas",ensureAuthenticated, homebolsistaRoute);
+app.use("/page/profile", ensureAuthenticated, profileRoute);
+app.use("/page/profile/edit", profileEditRoute);
 app.use("/page/handouts", handoutsRoute);
 app.use("/page/tutorials", tutorialsRoute);
 app.use("/page/checklists", checkliistsRoute);
