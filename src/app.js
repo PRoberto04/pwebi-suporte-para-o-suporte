@@ -75,6 +75,11 @@ function ensureAuthenticated(req, res, next){
   res.redirect('/auth/login');
 };
 
+app.use((req, res, next) => {
+  res.locals.user = req.user || null;
+  next();
+});
+
 import homeRoute from "./routes/home.js";
 import registerRoute from "./routes/authentication/register.js";
 import loginRoute from "./routes/authentication/login.js";
