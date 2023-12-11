@@ -20,7 +20,7 @@ passport.use(new LocalStrategy({usernameField: 'email'},
 
 passport.serializeUser(function(userModel, cb){
     process.nextTick(function() {
-        cb(null, { id: userModel.id, username: userModel.username});
+        cb(null, { id: userModel.id, name: userModel.name, email: userModel.email, workShift: userModel.workShift, numberTel: userModel.numberTel });
     });
 });
 
