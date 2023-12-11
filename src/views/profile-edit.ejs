@@ -5,19 +5,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="/css/profile-edit.css">
     <title>Profile Edit</title>
 </head>
 <body>
-    <h1>Edit Profile</h1>
-    <form action="../profile/edit/update" method="post">
-        <label for="turnoTrabalho">Turno de Trabalho:</label>
-        <input type="text" id="turnoTrabalho" name="workShift" value="<%= user.workShift %>">
-        <br>
-        <label for="numeroTelefone">Número de Telefone:</label>
-        <input type="text" id="numeroTelefone" name="numberTel" value="<%= user.numberTel %>">
-        <br>
-        <button type="submit">Update Profile</button>
-    </form>
+    <main id="container">
+        <form id="form" action="../profile/edit/update" method="post">
+            <!-- FORM HEADER -->
+            <div id="form_header">
+                <h1>Suas Informações </h1>
+                <!-- <i id="mode_icon" class="fa-solid fa-moon"></i> -->
+            </div>
+            <!-- INPUTS -->
+            <div id="inputs">    
+                <!-- NAME -->
+                <div class="input-box">
+                    <label for="email">
+                        Nome
+                        <div class="input-field">
+                            <i class="fa-solid fa-person"></i>
+                            <input type="text" id="email" name="email">
+                        </div>
+                    </label>
+                </div> 
+
+                <!-- EMAIL -->
+                <div class="input-box">
+                    <label for="email">
+                        E-mail
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </label>
+                </div>
+                
+                <!-- TURNO -->
+                <div class="input-box">
+                    <label for="password">
+                      Turno de trabalho
+                        <div class="input-field">
+                            <i class="fa-solid fa-sun"></i>
+                            <input type="text" id="password" name="workShift" value="<%= user.workShift %>">
+                        </div>
+                    </label>
+
+                <!-- Numero -->
+                <div class="input-box">
+                    <label for="password">
+                      Numero de telefone
+                        <div class="input-field">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="number" id="password" name="numberTel" value="<%= user.numberTel %>">
+                        </div>
+                    </label>
+                
+                <br>
+                <br>
+            <!-- LOGIN BUTTON -->
+            <button type="submit" id="button">
+                SALVAR
+            </button>
+        </form>
+    </main>
     <br>
     <a href="/page/profile">View Profile</a>
 </body>
