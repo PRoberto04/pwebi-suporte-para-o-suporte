@@ -19,11 +19,14 @@ passport.use(new GoogleStrategy({
                     name: profile.displayName,
                     email: profile.emails[0].value
                 });
-
                 await user.save();
             }
             return cb(null, user);
         } catch (error) {
+             if (error.code === 11000) {
+
+                 return cb(null, false, { message: 'Usuário com este ID do Google já existe.' });
+             }
             return cb(error);
         }
     }
