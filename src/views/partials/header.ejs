@@ -5,11 +5,23 @@
         </label> Centro De Tecnologia da Informação
     </h2>
 
-    <div class="user-wrapper">
-        <!--<img src="img/Avatar.png" width="40px" height="40px" alt="">-->
-        <div>
+    <% if (user) { %>
+        <!-- Se o usuário está autenticado, exiba o botão de perfil -->
+        <a href="/page/profile" class="user-button">
+          <img src="../images/calvo.png" width="40px" height="40px" alt="">
+          <div>
+            <h4><%= user.name %></h4>
+            <small>Bolsista</small>
+          </div>
+        </a>
+      <% } else { %>
+        <!-- Se o usuário não está autenticado, exiba o conteúdo original -->
+        <div class="user-wrapper">
+          <img src="../images/calvo.png" width="40px" height="40px" alt="">
+          <div>
             <h4>Bolsista</h4>
-            <small>menino(a) da TI</small>
+            <small>Bolsista</small>
+          </div>
         </div>
-    </div>
+      <% } %>
 </header>
