@@ -14,8 +14,7 @@ export const createUser = async (req, res) => {
             return res.status(409).render('error/error409');
         }
 
-        const newUser = new userModel({ name, email, password});
-
+        const newUser = new userModel({ name, email, password, workShift: "", numberTel: ""});
         await newUser.save();
 
         req.login(newUser, (loginErr) => {
@@ -79,6 +78,25 @@ export const toUpdateUser = async (req, res) => {
        res.status(500).render('error500');
     }
 };
+
+export const addNumAndTel = async (req, res) =>{
+    try {
+        const {workShift, numberTel} = req.body;
+
+        const user = await userModel.findByIdAndUpdate(
+            req.user.id,
+            {workShift, numberTel},
+            {new: true},
+        );
+            
+        if(!user){return res.status(404).json({error: 'Usuário não encontrado'})}
+
+        res.status(200).json(user);
+    } catch (error) {
+        console.error('Erro ao atualizar informações do perfil', error);
+        res.status(500).render('error/error500');
+    }
+}
 
 export const deleteUser = async (req, res) => {
     try {
