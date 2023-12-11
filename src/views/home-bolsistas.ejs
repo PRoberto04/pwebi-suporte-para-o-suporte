@@ -126,212 +126,31 @@
                 </div>
 
                 <div class="customers">
-
                     <div class="card">
-                        <div class="card-header">
-                            <h3>Lista de Bolsistas</h3>
-                            
-                        </div>
-
-                        <div class="card-body">
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="/images/calvo.png" width="40px" height="40px" alt="">
-                                    <div>
-                                        <h4>Paulo Roberto Carlos De Sousa</h4>
-                                        <small>Manhã</small>
-                                    </div>
-                                </div>
-                                <div class="contact">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585992504384" class="lab la-whatsapp"></a> 
-                                </div>
+                      <div class="card-header">
+                        <h3>Lista de Bolsistas</h3>
+                      </div>
+                      <div class="card-body">
+                        <% users.forEach(user => { %>
+                          <div class="customer">
+                            <div class="info">
+                              <!-- Update these lines to dynamically display user data -->
+                              <img src="/images/calvo.png" width="40px" height="40px" alt="">
+                              <div>
+                                <h4><%= user.name %></h4>
+                                <small><%= user.workShift %></small>
+                              </div>
                             </div>
-
-                            <div class="customer">
-                                <div class="info">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Anderson Gomes da Silva</h4>
-                                        <small>Tarde</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=558581995346" class="lab la-whatsapp"></a>
-                                </div>
+                            <div class="contact">
+                              <a href="Bolsitas.html" class="las la-user-circle"></a>
+                              <!-- Update the link to use user's numberTel -->
+                              <a href="https://api.whatsapp.com/send?phone=<%= user.numberTel %>" class="lab la-whatsapp"></a>
                             </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Carlos Abimael Oliveira do Nascimento</h4>
-                                        <small>Manhã</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585991450442" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Misael Fernandes Costa</h4>
-                                        <small>Manhã</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585991376906" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Davi Coelho Maciel</h4>
-                                        <small>Manhã</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585985523912" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>José Lidio Menezes da Cruz</h4>
-                                        <small>Manhã</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585994204612" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Pedro Lucas</h4>
-                                        <small>Manhã/Tarde</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585999171750" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Marcos Daniel da Silva Bezerra</h4>
-                                        <small>Manhã</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585996255472" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Joyce Ellen Caminha</h4>
-                                        <small>Manhã</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585998693539" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Camila Feitosa Vieira</h4>
-                                        <small>Tarde</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585991440082" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>José Vitor de Araújo Nascimento</h4>
-                                        <small>Tarde</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585985472151" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Luan Victor Santiago Sobrinho</h4>
-                                        <small>Tarde</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585981533855" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Franscisco Nicolas Valentino</h4>
-                                        <small>Tarde</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585987252251" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-
-                            <div class="customer ">
-                                <div class="info ">
-                                    <img src="/images/calvo.png" width="40px " height="40px " alt=" ">
-                                    <div>
-                                        <h4>Rita Alice</h4>
-                                        <small>Tarde</small>
-                                    </div>
-                                </div>
-                                <div class="contact ">
-                                    <a href="Bolsitas.html"class="las la-user-circle"></a>
-                                    <a href="https://api.whatsapp.com/send?phone=5585984120632" class="lab la-whatsapp"></a>
-                                </div>
-                            </div>
-                        </div>
+                          </div>
+                        <% }); %>
+                      </div>
                     </div>
-                </div>
+                  </div>
                 
             </div>
         </main>
