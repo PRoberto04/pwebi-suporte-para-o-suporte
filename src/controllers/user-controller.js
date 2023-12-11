@@ -33,52 +33,6 @@ export const createUser = async (req, res) => {
     }
 };
 
-export const listUsers = async(req, res) => {
-    try { 
-        const users = await userModel.find();
-
-        res.status(200).json(users);
-
-    } catch (error) {
-       res.status(500).render('error500');
-    }
-};
-
-export const detailUser = async(req, res) => {
-    try {
-        const user = await userModel.findById(req.params.id);
-
-        if (!user) {
-            return res.status(404).json({ error: 'Usuario não encontrado.' });
-        };
-
-        res.status(200).json(user);
-    } catch (error) {
-
-       res.status(500).render('error500');
-    }
-};
-
-export const toUpdateUser = async (req, res) => {
-    try {
-        const { name, email, password} = req.body;
-        const updatedUser = await userModel.findByIdAndUpdate(
-            req.params.id,
-            { name, email, password },
-            { new: true }
-        );
-
-        if (!updatedUser) {
-            return res.status(404).json({ error: 'Usuário não encontrado'})
-        };
-        
-        res.status(200).json(updatedUser);
-
-    } catch (error) {
-       res.status(500).render('error500');
-    }
-};
-
 export const addNumAndTel = async (req, res) =>{
     try {
         const {workShift, numberTel} = req.body;
@@ -97,18 +51,3 @@ export const addNumAndTel = async (req, res) =>{
         res.status(500).render('error/error500');
     }
 }
-
-export const deleteUser = async (req, res) => {
-    try {
-        const deletedUser = await userModel.findByIdAndDelete(req.params.id);
-        
-        if (!deletedUser) {
-            return res.status(404).json({ error: 'Usuário não encontrado'})
-        };
-
-        res.status(204).send();
-        
-    } catch (error) {
-       res.status(500).render('error500');
-    }
-};
