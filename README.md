@@ -12,13 +12,18 @@ Antes de começar, certifique-se de ter os seguintes pré-requisitos instalados:
 
 Além disso, este projeto utiliza as seguintes dependências, que serão instaladas automaticamente ao executar `npm install`:
 
+- **mongoose** (v7.5.3): Biblioteca para interagir com o MongoDB.
+ - **connect-mongo** (v5.1.0): Middleware para armazenar sessões do Express no MongoDB.
+ - **dotenv** (v16.3.1): Carrega variáveis de ambiente de um arquivo .env.
 - **bcrypt** (v5.1.1): Biblioteca para criptografia de senhas.
 - **body-parser** (v1.20.2): Middleware para análise de solicitações HTTP.
 - **ejs** (v3.1.9): Engine de modelo para gerar páginas HTML dinamicamente.
 - **express** (v4.18.2): Framework web para Node.js.
 - **express-flash** (v0.0.2): Middleware para exibição de mensagens flash em páginas da web.
 - **express-session** (v1.17.3): Middleware para gerenciar sessões de usuário.
-- **mongoose** (v7.5.3): Biblioteca para interagir com o MongoDB.
+- **passport** (v0.7.0): Middleware de autenticação para Node.js.
+- **passport-google-oauth20** (v2.0.0): Estratégia do Passport para autenticação com o Google.
+- **passport-local** (v1.0.0): Estratégia do Passport para autenticação local.
 
 Certifique-se de ter uma conexão à Internet ativa durante o processo de instalação, pois o npm (gerenciador de pacotes do Node.js) buscará e baixará as dependências automaticamente.
 
@@ -71,19 +76,24 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
 ## Estrutura do Projeto
 
 - `/config`: Configurações do projeto.
-  - `database.js`: Arquivo de configuração do banco de dados.
   - `nodemon.js`: Configurações para o Nodemon.
 
 - `/public`: Recursos públicos do projeto.
   - `/css`: Estilos CSS.
     - `checklists.css`: Estilos para a página de checklists.
+    - `create-pass.css`: Estilos para a página de criação de senha.
     - `handouts.css`: Estilos para a página de handouts.
     - `home-bolsistas.css`: Estilos para a página de home de bolsistas.
-    - `loginAndRegister.css`: Estilos para as páginas de login e registro.
+    - `home.css`: Estilos para a página inicial (geral).
+    - `login.css` e `register.css`: Estilos para as páginas de login e registro.
+    - `profile-edit.css`: Estilos para a página de edição do perfil.
+    - `sidebar.css`: Estilos para a sidebar usada noo projeto.
     - `tutorials.css`: Estilos para a página de tutoriais.
   - `/images`: Imagens usadas no projeto.
     - `calvo.png`: Imagem do Calvo -> representante da TI.
     - `google.png`: Imagem do Google.
+    - `ifce.png`: Imagem do símbolo do IFCE.
+    - `logo.png`: Imagem da logo da CTI.
     - `pc.png`: Imagem de um computador.
     - `v1.png`: Imagem versão 1.
     - `v2.png`: Imagem versão 2.
@@ -94,29 +104,22 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
 
 - `/src`: Código-fonte do projeto.
   - `/controllers`: Controladores do projeto.
-    - `/checklists`: Controladores para checklists.
-      - `formatting-controller.js`: Controlador para o checklist de formatação.
-      - `newuser-controller.js`: Controlador para o checklist de novos usuários.
     - `user-controller.js`: Controlador de usuários.
+    - `passportGoogle.js`: Responsável pela utilização da API oauth2.0 do Google.
+    - `passportLocal.js`: Responsável pela lógica de autenticação local.
   - `/models`: Modelos de dados do projeto.
-    - `/checklists`: Modelos de dados relacionados a checklists.
-      - `formatting-model.js`: Modelo de dados para o checklist de formatação.
-      - `newuser-model.js`: Modelo de dados para o checklist de novos usuários.
     - `user-model.js`: Modelo de dados de usuários.
   - `/routes`: Rotas do projeto.
-    - `/api`: Rotas da API.
-      - `/checklists`: Rotas relacionadas a checklists.
-        - `formatting.js`: Rota para o checklist de formatação.
-        - `newuser.js`: Rota para o checklist de novos usuários.
-      - `user.js`: Rota de usuário.
     - `/authentication`: Rotas de autenticação.
-      - `login.js`: Rota de login -> contém também a lógica de autenticação.
-      - `register.js`: Rota de registro.
+      - `login.js`: Rota responsável pelo login.
+      - `register.js`: Rota responsável pelo registro.
     - `/pages`: Rotas para páginas.
+      - `checklists.js`: Rota para a página de checklists.
       - `handouts.js`: Rota para a página de handouts.
       - `home-bolsistas.js`: Rota para a página de home de bolsistas.
+      - `profile-edit.js`: Rota responsável pela edição do perfil do usuário.
+      - `profile.js`: Rota responsável pela apresentação do perfil do usuário.
       - `tutorials.js`: Rota para a página de tutoriais.
-      - `checklists.js`: Rota para a página de checklists.
     - `home.js`: Rota para a página inicial.
 
   - `/views`: Visualizações do projeto.
@@ -127,15 +130,19 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
     - `/partials`: Partes reutilizáveis das visualizações.
       - `sidebar.ejs`: Barra lateral reutilizável.
       - `header.ejs`: Cabeçalho reutilizável.
-    - `login.ejs`: Página de login.
-    - `register.ejs`: Página de registro.
-    - `home-bolsistas.ejs`: Página de home de bolsistas.
+      - `footer.ejs`: Rodapé reutilizável.
     - `checklists.ejs`: Página de checklists.
-    - `tutorials.ejs`: Página de tutoriais.
+    - `create-pass.ejs`: Página de criação de senha.
     - `handouts.ejs`: Página de handouts.
-
+    - `home-bolsistas.ejs`: Página de home de bolsistas.
+    - `home.ejs`: Página inicial GERAL
+    - `login.ejs`: Página de login.
+    - `profile-edit.ejs`: Página de edição de perfil.
+    - `profile.ejs`: Página de visualização de perfil.
+    - `register.ejs`: Página de registro.
+    - `tutorials.ejs`: Página de tutoriais.
 - `/app.js`: Arquivo principal do aplicativo.
-- `/server.js`: Arquivo principal do servidor.
+- `.env`: Arquivo de segurança para dados sensíveis.
 
 
 ## Licença
@@ -144,8 +151,19 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 
 ## Tarefas para a Versão 1.0.0
 
-- [ ] Implementar token de verificação
-- [ ] Implementar checklist com poup-up
-- [ ] Salvar os checklists no banco de dados
-- [ ] Fazer com que o checklist novato desapareça após ser concluído
-- [ ] Implementar autenticação com o Google
+- [ ] Remover autenticação local (permanecerá apenas com o google);
+- [ ] Remver rota de criação de senha e seus relacionados;
+- [ ] Definir modelo de apresentação das informações de perfil;
+- [ ] Autenticação com o Google:
+  - [ ] Resolver erro de chave duplicada;
+  - [ ] Adicionar direcionamento para edição de perfil após conta criada;
+- [ ] Página de edição de perfil:
+  - [ ] Remover fields de nome e email;
+  - [ ] Adicionar dias de trabalho junto ao turno;
+- [ ] Criar página para adicionar/remover apostilas e tutoriais;
+- [ ] Criar página para adicionar/remover regras do setor;
+- [ ] Associar checklist de novatos ao usuário;
+- [ ] Substituir páginas de erro por mensagens flash;
+- [ ] Notificações durante a marcação do checklist de formatação;
+- [ ] Adicionar middleware de autenticação nas rotas restantes;
+- [ ] Modificar desing para páginas de login/registro após remoção da autenticação local;
