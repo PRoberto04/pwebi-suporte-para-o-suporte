@@ -106,6 +106,7 @@ app.use("/page/checklists", checkliistsRoute);
 app.on("pronto", () => {
   app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
+    console.log(`Acesse: http://localhost:3000/`)
   });
 });
 
