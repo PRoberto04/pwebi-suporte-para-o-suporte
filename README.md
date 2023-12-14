@@ -1,4 +1,5 @@
 ![GitHub License](https://img.shields.io/github/license/PRoberto04/pwebi-suporte-para-o-suporte)
+![NPM](https://img.shields.io/npm/l/mongoose)
 
 # Cantinho dos bolsistas
 
