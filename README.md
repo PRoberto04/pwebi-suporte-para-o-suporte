@@ -1,3 +1,5 @@
+![GitHub License](https://img.shields.io/github/license/PRoberto04/pwebi-suporte-para-o-suporte)
+
 # Cantinho dos bolsistas
 
 ## Descrição
