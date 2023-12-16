@@ -5,12 +5,12 @@ const router = express.Router();
 
 //Utiliza o arquivo de visualização, para a página de login
 router.get("/", (req, res) => {
-  res.render("login");
+  res.render("auth");
 });
 
 router.get(
   "/google",
-  googlePassport.authenticate("google", { scope: ["profile", "email"] })
+  googlePassport.authenticate("google", {scope: ["profile", "email"]})
 );
 
 router.get(
