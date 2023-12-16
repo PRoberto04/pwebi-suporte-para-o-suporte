@@ -15,9 +15,8 @@ Antes de começar, certifique-se de ter os seguintes pré-requisitos instalados:
 Além disso, este projeto utiliza as seguintes dependências, que serão instaladas automaticamente ao executar `npm install`:
 
 - **mongoose** (v7.5.3): Biblioteca para interagir com o MongoDB.
- - **connect-mongo** (v5.1.0): Middleware para armazenar sessões do Express no MongoDB.
- - **dotenv** (v16.3.1): Carrega variáveis de ambiente de um arquivo .env.
-- **bcrypt** (v5.1.1): Biblioteca para criptografia de senhas.
+- **connect-mongo** (v5.1.0): Middleware para armazenar sessões do Express no MongoDB.
+- **dotenv** (v16.3.1): Carrega variáveis de ambiente de um arquivo .env.
 - **body-parser** (v1.20.2): Middleware para análise de solicitações HTTP.
 - **ejs** (v3.1.9): Engine de modelo para gerar páginas HTML dinamicamente.
 - **express** (v4.18.2): Framework web para Node.js.
@@ -25,7 +24,6 @@ Além disso, este projeto utiliza as seguintes dependências, que serão instala
 - **express-session** (v1.17.3): Middleware para gerenciar sessões de usuário.
 - **passport** (v0.7.0): Middleware de autenticação para Node.js.
 - **passport-google-oauth20** (v2.0.0): Estratégia do Passport para autenticação com o Google.
-- **passport-local** (v1.0.0): Estratégia do Passport para autenticação local.
 
 Certifique-se de ter uma conexão à Internet ativa durante o processo de instalação, pois o npm (gerenciador de pacotes do Node.js) buscará e baixará as dependências automaticamente.
 
@@ -82,12 +80,12 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
 
 - `/public`: Recursos públicos do projeto.
   - `/css`: Estilos CSS.
+    - `auth.css`: Estilos para as página de autenticação.
     - `checklists.css`: Estilos para a página de checklists.
     - `create-pass.css`: Estilos para a página de criação de senha.
     - `handouts.css`: Estilos para a página de handouts.
     - `home-bolsistas.css`: Estilos para a página de home de bolsistas.
     - `home.css`: Estilos para a página inicial (geral).
-    - `login.css` e `register.css`: Estilos para as páginas de login e registro.
     - `profile-edit.css`: Estilos para a página de edição do perfil.
     - `sidebar.css`: Estilos para a sidebar usada noo projeto.
     - `tutorials.css`: Estilos para a página de tutoriais.
@@ -108,13 +106,11 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
   - `/controllers`: Controladores do projeto.
     - `user-controller.js`: Controlador de usuários.
     - `passportGoogle.js`: Responsável pela utilização da API oauth2.0 do Google.
-    - `passportLocal.js`: Responsável pela lógica de autenticação local.
   - `/models`: Modelos de dados do projeto.
     - `user-model.js`: Modelo de dados de usuários.
   - `/routes`: Rotas do projeto.
     - `/authentication`: Rotas de autenticação.
-      - `login.js`: Rota responsável pelo login.
-      - `register.js`: Rota responsável pelo registro.
+      - `auth.js`: Rota responsável pela autenticação do usuário.
     - `/pages`: Rotas para páginas.
       - `checklists.js`: Rota para a página de checklists.
       - `handouts.js`: Rota para a página de handouts.
@@ -133,15 +129,14 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
       - `sidebar.ejs`: Barra lateral reutilizável.
       - `header.ejs`: Cabeçalho reutilizável.
       - `footer.ejs`: Rodapé reutilizável.
+    - `auth.ejs`: Página de autenticação de usuário.
     - `checklists.ejs`: Página de checklists.
     - `create-pass.ejs`: Página de criação de senha.
     - `handouts.ejs`: Página de handouts.
     - `home-bolsistas.ejs`: Página de home de bolsistas.
     - `home.ejs`: Página inicial GERAL
-    - `login.ejs`: Página de login.
     - `profile-edit.ejs`: Página de edição de perfil.
     - `profile.ejs`: Página de visualização de perfil.
-    - `register.ejs`: Página de registro.
     - `tutorials.ejs`: Página de tutoriais.
 - `/app.js`: Arquivo principal do aplicativo.
 - `.env`: Arquivo de segurança para dados sensíveis.
@@ -153,11 +148,11 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 
 ## Tarefas para a Versão 1.0.0
 
-- [ ] Remover autenticação local (permanecerá apenas com o google);
-- [ ] Remver rota de criação de senha e seus relacionados;
+- [x] Remover autenticação local (permanecerá apenas com o google);
+- [x] Remover rota de criação de senha e seus relacionados;
 - [ ] Definir modelo de apresentação das informações de perfil;
 - [ ] Autenticação com o Google:
-  - [ ] Resolver erro de chave duplicada;
+  - [x] Resolver erro de chave duplicada;
   - [ ] Adicionar direcionamento para edição de perfil após conta criada;
 - [ ] Página de edição de perfil:
   - [ ] Remover fields de nome e email;
@@ -168,4 +163,4 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 - [ ] Substituir páginas de erro por mensagens flash;
 - [ ] Notificações durante a marcação do checklist de formatação;
 - [ ] Adicionar middleware de autenticação nas rotas restantes;
-- [ ] Modificar desing para páginas de login/registro após remoção da autenticação local;
+- [x] Modificar desing para páginas de login/registro após remoção da autenticação local;
