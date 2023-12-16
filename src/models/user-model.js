@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 import '../app.js';
-import bcrypt from 'bcrypt';
 
 const { Schema } = mongoose;
 
@@ -14,28 +13,6 @@ const userSchema = new Schema({
     // achievementChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checknewuser'},
     // computerSetupChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checkformatting'},
 });
-
-// Função para criptografar a senha antes de salvar no banco de dados
-userSchema.pre('save', async function(next) {
-  if (this.isModified('password')) {
-      try {
-          const salt = await bcrypt.genSalt(10);
-          this.password = await bcrypt.hash(this.password, salt);
-      } catch (error) {
-          return next(error);
-      }
-  }
-  return next();
-});
-
-//Função para verificar se a senha fornecida pelo usuário coresponde ao hash armazenado no banco de dados
-userSchema.methods.verifyPassword = async function (candidatepassword) {
-  try {
-    return await bcrypt.compare(candidatepassword, this.password);
-  } catch (error) {
-    throw error;
-  }
-    };
 
 const userModel = mongoose.model('userModel', userSchema);
 
