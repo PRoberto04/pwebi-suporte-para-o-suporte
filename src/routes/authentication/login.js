@@ -16,7 +16,6 @@ router.get(
 router.get(
   "/google/callback",
   googlePassport.authenticate("google", { failureRedirect: "/" }),
-  checkPassword,
   function (req, res) {
     res.redirect("/page/home-bolsistas");
   }
