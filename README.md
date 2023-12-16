@@ -148,19 +148,19 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 
 ## Tarefas para a Versão 1.0.0
 
-- [x] Remover autenticação local (permanecerá apenas com o google);
-- [x] Remover rota de criação de senha e seus relacionados;
-- [ ] Definir modelo de apresentação das informações de perfil;
-- [x] Autenticação com o Google:
-  - [x] Resolver erro de chave duplicada;
-  - [x] Adicionar direcionamento para edição de perfil após conta criada;
-- [ ] Página de edição de perfil:
-  - [x] Remover fields de nome e email;
-  - [ ] Adicionar dias de trabalho junto ao turno;
-- [ ] Criar página para adicionar/remover apostilas e tutoriais;
-- [ ] Criar página para adicionar/remover regras do setor;
+- [X] Remover autenticação local (permanecerá apenas com o google);
+- [X] Remover rota de criação de senha e seus relacionados;
+- [X] Autenticação com o Google:
+  - [X] Resolver erro de chave duplicada;
+  - [X] Adicionar direcionamento para edição de perfil após conta criada;
+- [X] Adicionar middleware de autenticação nas rotas restantes;
+- [X] Modificar desing para páginas de login/registro após remoção da autenticação local;
+- [X] Página de edição de perfil:
+  - [X] Remover fields de nome e email;
+  - [X] Adicionar dias de trabalho junto ao turno;
 - [ ] Associar checklist de novatos ao usuário;
 - [ ] Substituir páginas de erro por mensagens flash;
+- [ ] Definir modelo de apresentação das informações de perfil;
 - [ ] Notificações durante a marcação do checklist de formatação;
-- [X] Adicionar middleware de autenticação nas rotas restantes;
-- [x] Modificar desing para páginas de login/registro após remoção da autenticação local;
+- [ ] Criar página para adicionar/remover apostilas e tutoriais;
+- [ ] Criar página para adicionar/remover regras do setor;
