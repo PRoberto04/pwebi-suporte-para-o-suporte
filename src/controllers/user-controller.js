@@ -1,12 +1,12 @@
 import userModel from '../models/user-model.js';
 
-export const addNumAndTel = async (req, res) =>{
+export const updateProfile = async (req, res) =>{
     try {
-        const {workShift, numberTel} = req.body;
+        const {workShift, numberTel, options} = req.body;
 
         const user = await userModel.findByIdAndUpdate(
             req.user._id,
-            {workShift, numberTel},
+            {workShift, numberTel, days: options || []},
             {new: true},
         );
             
