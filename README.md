@@ -155,12 +155,12 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
   - [x] Resolver erro de chave duplicada;
   - [ ] Adicionar direcionamento para edição de perfil após conta criada;
 - [ ] Página de edição de perfil:
-  - [ ] Remover fields de nome e email;
+  - [x] Remover fields de nome e email;
   - [ ] Adicionar dias de trabalho junto ao turno;
 - [ ] Criar página para adicionar/remover apostilas e tutoriais;
 - [ ] Criar página para adicionar/remover regras do setor;
 - [ ] Associar checklist de novatos ao usuário;
 - [ ] Substituir páginas de erro por mensagens flash;
 - [ ] Notificações durante a marcação do checklist de formatação;
-- [ ] Adicionar middleware de autenticação nas rotas restantes;
+- [X] Adicionar middleware de autenticação nas rotas restantes;
 - [x] Modificar desing para páginas de login/registro após remoção da autenticação local;
