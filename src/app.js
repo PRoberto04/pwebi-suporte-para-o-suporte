@@ -72,7 +72,7 @@ app.use(express.static(__dirname + "/../public"));
 
 function ensureAuthenticated(req, res, next){
   if(req.isAuthenticated()){return next()};
-  res.redirect('/auth/login');
+  res.redirect('/auth');
 };
 
 app.use((req, res, next) => {
@@ -81,8 +81,7 @@ app.use((req, res, next) => {
 });
 
 import homeRoute from "./routes/home.js";
-import registerRoute from "./routes/authentication/register.js";
-import loginRoute from "./routes/authentication/login.js";
+import authRoute from "./routes/authentication/auth.js";
 import homebolsistaRoute from "./routes/pages/home-bolsistas.js";
 import handoutsRoute from "./routes/pages/handouts.js";
 import tutorialsRoute from "./routes/pages/tutorials.js";
@@ -91,8 +90,7 @@ import profileRoute from './routes/pages/profile.js';
 import profileEditRoute from './routes/pages/profile-edit.js';
 
 app.use("/", homeRoute);
-app.use("/auth/register", registerRoute);
-app.use("/auth/login", loginRoute);
+app.use("/auth", authRoute);
 
 //Essas rotas referem-se a páginas em que os usuários poderão acessar às funcionalidades
 app.use("/page/home-bolsistas",ensureAuthenticated, homebolsistaRoute);
