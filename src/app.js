@@ -103,7 +103,6 @@ app.use("/page/checklists", ensureAuthenticated, checkliistsRoute);
 // O servidor começa a 'rodar' na porta, apenas após a conexão com o banco de dados
 app.on("pronto", () => {
   app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`);
     console.log(`Acesse: http://localhost:3000/`)
   });
 });
