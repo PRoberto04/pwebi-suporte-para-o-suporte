@@ -51,7 +51,7 @@ const sessionOpt = session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 1000 * 60 * 60, // 1 hora
+    maxAge: 1000 * 60 * 120, // 2 horas
     httpOnly: true
   }
 });
@@ -95,10 +95,10 @@ app.use("/auth", authRoute);
 //Essas rotas referem-se a páginas em que os usuários poderão acessar às funcionalidades
 app.use("/page/home-bolsistas",ensureAuthenticated, homebolsistaRoute);
 app.use("/page/profile", ensureAuthenticated, profileRoute);
-app.use("/page/profile/edit", profileEditRoute);
-app.use("/page/handouts", handoutsRoute);
-app.use("/page/tutorials", tutorialsRoute);
-app.use("/page/checklists", checkliistsRoute);
+app.use("/page/profile/edit", ensureAuthenticated, profileEditRoute);
+app.use("/page/handouts", ensureAuthenticated, handoutsRoute);
+app.use("/page/tutorials", ensureAuthenticated, tutorialsRoute);
+app.use("/page/checklists", ensureAuthenticated, checkliistsRoute);
 
 // O servidor começa a 'rodar' na porta, apenas após a conexão com o banco de dados
 app.on("pronto", () => {
