@@ -20,29 +20,52 @@
             </div>
             <!-- INPUTS -->
             <div id="inputs">    
-                <!-- TURNO -->
-                <div class="input-box">
-                    <label for="password">
-                      Turno de trabalho
-                        <div class="input-field">
-                            <i class="fa-solid fa-sun"></i>
-                            <input type="text" id="password" name="workShift" value="<%= user.workShift %>">
-                        </div>
-                    </label>
-
+                
                 <!-- Numero -->
                 <div class="input-box">
                     <label for="password">
-                      Numero de telefone
+                        Numero de telefone
                         <div class="input-field">
                             <i class="fa-solid fa-phone"></i>
-                            <input type="number" id="password" name="numberTel" value="<%= user.numberTel %>">
+                            <input type="text" id="password" name="numberTel" value="<%= user.numberTel %>">
                         </div>
                     </label>
-                
-                <br>
-                <br>
-            <!-- LOGIN BUTTON -->
+                    
+                    <!-- TURNO -->
+                    <div class="input-box">
+                        <label for="workShift">
+                            Turno de trabalho
+                            <div class="input-field">
+                                <i class="fa-solid fa-sun"></i>
+                                <select id="workShift" name="workShift">
+                                    <option value="Manhã" <%= user.workShift === 'Manhã' ? 'selected' : '' %>>Manhã</option>
+                                    <option value="Tarde" <%= user.workShift === 'Tarde' ? 'selected' : '' %>>Tarde</option>
+                                </select>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active">
+                            <input type="checkbox" name="options" id="option1" value="Segunda" <%= user.days && user.days.includes('Segunda') ? 'checked' : '' %>> Segunda
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="checkbox" name="options" id="option2" value="Terça" <%= user.days && user.days.includes('Terça') ? 'checked' : '' %>> Terça
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="checkbox" name="options" id="option3" value="Quarta" <%= user.days && user.days.includes('Quarta') ? 'checked' : '' %>> Quarta
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="checkbox" name="options" id="option4" value="Quinta" <%= user.days && user.days.includes('Quinta') ? 'checked' : '' %>> Quinta
+                        </label>
+                        <label class="btn btn-secondary">
+                            <input type="checkbox" name="options" id="option5" value="Sexta" <%= user.days && user.days.includes('Sexta') ? 'checked' : '' %>> Sexta
+                        </label>
+                    </div>
+
+                    <br>
+                    <br>
+                    <!-- LOGIN BUTTON -->
             <button type="submit" id="button">
                 SALVAR
             </button>
