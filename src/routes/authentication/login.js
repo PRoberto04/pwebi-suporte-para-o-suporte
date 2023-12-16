@@ -1,6 +1,4 @@
 import express from "express";
-import {createPassword} from "../../controllers/user-controller.js"
-import localPassport from "../../controllers/passportLocal.js";
 import googlePassport from "../../controllers/passportGoogle.js";
 
 const router = express.Router();
@@ -32,16 +30,6 @@ router.get(
   }
 );
 
-router.post(
-  "/password",
-  checkPassword,
-  localPassport.authenticate("local", {
-    successRedirect: "/page/home-bolsistas",
-    failureRedirect: "/auth/login",
-    failureMessage: true,
-  })
-);
-
 router.post("/logout", function (req, res, next) {
   req.logout(function (err) {
     if (err) {
@@ -50,11 +38,5 @@ router.post("/logout", function (req, res, next) {
     res.redirect("/");
   });
 });
-
-router.get("/create-password", (req, res) => {
-  res.render("create-pass");
-});
-
-router.post('/create-password', createPassword);
 
 export default router;
