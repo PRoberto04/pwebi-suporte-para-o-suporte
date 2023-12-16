@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 //Esquema que o mongoose usará para possibilitar a criação de um usuário
 const userSchema = new Schema({
     name: { type: String, required: true},
-    email: { type: String, required: true, unique: true},
+    email: { type: String, index: true, unique: true, sparse: true},
     workShift: {type: String},
     numberTel: {type: String}
     // achievementChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checknewuser'},
