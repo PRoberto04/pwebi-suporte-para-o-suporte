@@ -8,7 +8,8 @@ const userSchema = new Schema({
     name: { type: String, required: true},
     email: { type: String, index: true, unique: true, sparse: true},
     workShift: {type: String},
-    numberTel: {type: String}
+    numberTel: {type: String},
+    days: { type: [String], default: [] },
     // achievementChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checknewuser'},
     // computerSetupChecklist: { type: mongoose.Schema.Types.ObjectId, ref: 'checkformatting'},
 });
