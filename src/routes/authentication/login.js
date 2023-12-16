@@ -3,14 +3,6 @@ import googlePassport from "../../controllers/passportGoogle.js";
 
 const router = express.Router();
 
-const checkPassword = (req, res, next) => {
-  if (req.isAuthenticated() && !req.user.password) {
-    return res.redirect("/auth/login/create-password");
-  }
-
-  return next();
-};
-
 //Utiliza o arquivo de visualização, para a página de login
 router.get("/", (req, res) => {
   res.render("login");
