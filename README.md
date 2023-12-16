@@ -151,9 +151,9 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 - [x] Remover autenticação local (permanecerá apenas com o google);
 - [x] Remover rota de criação de senha e seus relacionados;
 - [ ] Definir modelo de apresentação das informações de perfil;
-- [ ] Autenticação com o Google:
+- [x] Autenticação com o Google:
   - [x] Resolver erro de chave duplicada;
-  - [ ] Adicionar direcionamento para edição de perfil após conta criada;
+  - [x] Adicionar direcionamento para edição de perfil após conta criada;
 - [ ] Página de edição de perfil:
   - [x] Remover fields de nome e email;
   - [ ] Adicionar dias de trabalho junto ao turno;
