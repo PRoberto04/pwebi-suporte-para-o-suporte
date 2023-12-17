@@ -36,8 +36,11 @@ passport.use(
                 googleId: profile.id,
                 name: profile.displayName,
                 email: profile.emails[0].value,
+                checklistComplete: false,
               });
               await user.save();
+
+              await userModel.createDefaultChecklist(user._id);
           }
 
           return cb(null, user);
