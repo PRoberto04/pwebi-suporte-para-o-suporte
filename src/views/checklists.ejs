@@ -5,7 +5,7 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-      <title>Admin</title>
+      <title>Checklists</title>
       <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
       <link rel="stylesheet" href="/css/checklists.css">
   </head>
@@ -20,24 +20,24 @@
       <%- include ('./partials/header') %>
 
       <main>
-        
-        <div class="column">
-            <img src="/images/Avatar.png" alt="Imagem 1">
-            <h2>Checklist para os novatos</h2>
-            <ul class="checklist">
-              <li><input type="checkbox" id="item1"> <label for="item1">Apresentação do setor
-            </label></li>
-              <li><input type="checkbox" id="item2"> <label for="item2">Providenciou documentação do Aux. formação? Marcos e Andrea Serviço Social</label></li>
-              <li><input type="checkbox" id="item3"> <label for="item3">Recebeu fardamento do Serviço Social </label></li>
-            <li><input type="checkbox" id="item3"> <label for="item3">Recebeu Armário/chave?</label></li>
-            <li><input type="checkbox" id="item3"> <label for="item3">Leu as documentações/normas do setor?</label></li>
-            <li><input type="checkbox" id="item3"> <label for="item3">Definição de escala/planilha</label></li>
-            <li><input type="checkbox" id="item3"> <label for="item3">Apresentação de bancadas/ferramentas</label></li>
-            <li><input type="checkbox" id="item3"> <label for="item3">Leitura ds Apostilas</label></li>
-            <li><input type="checkbox" id="item3"> <label for="item3">Recebeu fardamento do Serviço Social</label></li>
-            </ul>
-        </div>
-        
+        <div class="container">
+          <h1>Checklist</h1>
+          <% console.log(user.checklistComplete) %>
+          <% if (!user.checklistComplete) { %>
+            <form action="./checklists/submit" method="POST">
+                <% user.checklist.forEach(function(item, index) { %>
+                    <div>
+                        <input type="hidden" name="checklist[<%= index %>][label]" value="<%= item.label %>">
+                        <input type="checkbox" name="checklist[<%= index %>][checked]" value="true" <% if(item.checked) { %> checked <% } %> >
+                        <label><%= item.label %></label>
+                    </div>
+                <% }); %>
+                <input type="submit" value="Submit">
+            </form>
+        <% } else { %>
+            <p>Você já completou o checklist!</p>
+        <% } %>
+      </div>
         <div class="column">
           <img src="/images/pc.png" alt="Imagem 2">
           <h2>Checklist de formatação</h2>
