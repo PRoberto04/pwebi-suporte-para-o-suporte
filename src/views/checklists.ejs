@@ -22,7 +22,6 @@
       <main>
         <div class="container">
           <h1>Checklist</h1>
-          <% console.log(user.checklistComplete) %>
           <% if (!user.checklistComplete) { %>
             <form action="./checklists/submit" method="POST">
                 <% user.checklist.forEach(function(item, index) { %>
