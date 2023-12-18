@@ -30,7 +30,8 @@ export const verifyCheckList = async (req, res) => {
 
         req.user = user;
     } catch (error) {
-        console.error('Erro: ', error)
+        console.error('Erro ao verificar a marcação do checklist:', error);
+        res.status(500).render('error/error500');
     }
 }
 

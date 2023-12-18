@@ -13,7 +13,6 @@ const checkFieldsMiddleware = async (req, res, next) => {
             return res.redirect('/page/profile/edit');
           }
         } else {
-          // Não redirecionar se o usuário não estiver autenticado
           next();
         }
     } catch (error) {
@@ -28,8 +27,8 @@ router.get('/', checkFieldsMiddleware, async (req, res) =>{
 
         res.render('home-bolsistas', {users});
     } catch (error) {
-        console.error('Error fetching user data:', error);
-        res.status(500).send('Internal Server Error');
+        console.error('Erro ao buscar dados do usuário:', error);
+        res.status(500).render('error/error500');
     }
 });
 

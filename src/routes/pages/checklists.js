@@ -10,6 +10,7 @@ router.get('/', async (req, res) =>{
         
     } catch (error) {
         console.error('Erro ao renderizar a página do checklist:', error);
+        res.status(500).render('error/error500');
     }
 });
 
