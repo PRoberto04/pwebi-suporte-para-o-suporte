@@ -158,8 +158,7 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 - [X] Página de edição de perfil:
   - [X] Remover fields de nome e email;
   - [X] Adicionar dias de trabalho junto ao turno;
-- [X] Associar checklist de novatos ao usuário (obs: para visualizar as mudanças, está sendo necessário
-sair da aplicação e depois retornar, resolver isso);
+- [X] Associar checklist de novatos ao usuário
 - [ ] Substituir páginas de erro por mensagens flash;
 - [ ] Definir modelo de apresentação das informações de perfil;
 - [ ] Notificações durante a marcação do checklist de formatação;
