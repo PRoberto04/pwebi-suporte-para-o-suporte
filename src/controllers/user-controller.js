@@ -27,6 +27,8 @@ export const verifyCheckList = async (req, res) => {
         const isChecklistComplete = user.checklist.every(item => item.checked);
         user.checklistComplete = isChecklistComplete;
         await user.save();
+
+        req.user = user;
     } catch (error) {
         console.error('Erro: ', error)
     }
@@ -45,9 +47,6 @@ export const updateChecklistStatus = async (req, res) => {
             return res.status(404).json({ error: 'Checklist não encontrado' });
         }
 
-        console.log(Array.isArray(user.checklist)); 
-        console.log(user.checklist);
-
         if (!req.body.checklist || !Array.isArray(req.body.checklist) || !req.body.checklist.every(item => item.hasOwnProperty('label') && item.hasOwnProperty('checked'))) {
             return res.status(400).json({ error: 'Dados do checklist inválidos' });
         }
@@ -59,6 +58,8 @@ export const updateChecklistStatus = async (req, res) => {
         
         user.checklistComplete = user.checklist.every(item => item.checked);
         await user.save();
+
+        req.user = user;
 
         res.redirect('../home-bolsistas');
     } catch (error) {
