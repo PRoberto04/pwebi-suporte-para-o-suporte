@@ -44,20 +44,20 @@
               <ul class="checklist">
                   <li><input type="checkbox" id="itemA"> <label for="itemA">Informaões iniciais</label>
                     <ul class="sub-checklist">
-                      <li><input type="checkbox" id="subitemA1"> <label for="subitemA1">Nomaer Equipamento( Setor + tombamento)</label></li>
-                      <li><input type="checkbox" id="subitemA2"> <label for="subitemA2">Usuários ( SUPORTE e do Usuário)</label></li>
-                      <li><input type="checkbox" id="subitemA2"> <label for="subitemA2">sistema operacional</label></li>
+                      <li><input type="checkbox" id="subitemA1"> <label for="subitemA1">Nomear Equipamento(Sigla do setor + tombamento)</label></li>
+                      <li><input type="checkbox" id="subitemA2"> <label for="subitemA2">Usuários (SUPORTE e do Usuário)</label></li>
+                      <li><input type="checkbox" id="subitemA2"> <label for="subitemA2">Sistema operacional</label></li>
                       
                     </ul>
                   </li>
                   <li><input type="checkbox" id="itemB"> <label for="itemB">Backup manual (quando necessário)</label></li>
                   <ul class="sub-checklist">
-                      <li><input type="checkbox" id="subitemB1"> <label for="subitemA1"> as 6 pastas principais</label></li>
-                      <li><input type="checkbox" id="subitemB2"> <label for="subitemA2">  as pastas soltas no C: e D:</label></li>
+                      <li><input type="checkbox" id="subitemB1"> <label for="subitemA1"> As 6 pastas principais</label></li>
+                      <li><input type="checkbox" id="subitemB2"> <label for="subitemA2">  As pastas soltas no C: e D:</label></li>
                   </ul>
                   <li><input type="checkbox" id="itemC"> <label for="itemC">Backup automático (quando necessário)</label></li>
                   <ul class="sub-checklist">
-                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> clonar o HD ou SSD</label></li>
+                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> lonar o HD ou SSD</label></li>
                   </ul>
                   <li><input type="checkbox" id="itemD"> <label for="itemD">Programas básicos(NINITE.COM)</label>
                     <ul class="sub-checklist">
@@ -71,10 +71,10 @@
                     </ul>
                   <li><input type="checkbox" id="itemE"> <label for="itemE">Instalar o Office 2013</label></li>
                   <ul class="sub-checklist">
-                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> word</label></li>
-                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> aces</label></li>
-                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> power point</label></li>
-                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> excel</label></li>
+                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> Word</label></li>
+                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> Access</label></li>
+                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> Power Point</label></li>
+                      <li><input type="checkbox" id="subitemC1"> <label for="subitemA1"> Excel</label></li>
 
 
                   </ul>
@@ -83,13 +83,32 @@
                   <li><input type="checkbox" id="itemG"> <label for="itemG">Papel de parede do CTI</label></li>
                   <li><input type="checkbox" id="itemH"> <label for="itemH">Desativar supensão de energia</label></li>
                   <li><input type="checkbox" id="itemI"> <label for="itemI">Revisar</label></li>
-                  <li><input type="checkbox" id="itemJ"> <label for="itemJ">Testar com Video (4K se tiver placa de vídeo)</label></li>
+                  <li><input type="checkbox" id="itemJ"> <label for="itemJ">Testar com video (4K se tiver placa de vídeo)</label></li>
                   <li><input type="checkbox" id="itemK"> <label for="itemK">Atualizar o chamado </label></li>
           </ul>
         </div>
-
       </main>
     </div>
+
+    <script>
+      var messages = {
+          'itemA': 'Você concluiu a tarefa A!',
+        };
+        
+        document.querySelectorAll('input[type=checkbox]').forEach(function(checkbox) {
+          if (!checkbox.id.startsWith('subItem')) {
+            checkbox.addEventListener('change', function(e) {
+              if (e.target.checked) {
+                setTimeout(function() {   
+                  var message = messages[e.target.id];
+                  if (message) {
+                    alert(message);
+                  }
+                }, 30000); // 60000 milissegundos = 1 minuto
+              }
+            });
+          }
+        });</script>
   </body>
 
 </html>
