@@ -75,71 +75,76 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
 
 ## Estrutura do Projeto
 
-- `/config`: Configurações do projeto.
-  - `nodemon.js`: Configurações para o Nodemon.
+- `/config`
+  - `multer.js`
+  - `nodemon.js`
 
-- `/public`: Recursos públicos do projeto.
-  - `/css`: Estilos CSS.
-    - `auth.css`: Estilos para as página de autenticação.
-    - `checklists.css`: Estilos para a página de checklists.
-    - `create-pass.css`: Estilos para a página de criação de senha.
-    - `handouts.css`: Estilos para a página de handouts.
-    - `home-bolsistas.css`: Estilos para a página de home de bolsistas.
-    - `home.css`: Estilos para a página inicial (geral).
-    - `profile-edit.css`: Estilos para a página de edição do perfil.
-    - `sidebar.css`: Estilos para a sidebar usada noo projeto.
-    - `tutorials.css`: Estilos para a página de tutoriais.
-  - `/images`: Imagens usadas no projeto.
-    - `calvo.png`: Imagem do Calvo -> representante da TI.
-    - `google.png`: Imagem do Google.
-    - `ifce.png`: Imagem do símbolo do IFCE.
-    - `logo.png`: Imagem da logo da CTI.
-    - `pc.png`: Imagem de um computador.
-    - `v1.png`: Imagem versão 1.
-    - `v2.png`: Imagem versão 2.
-    - `v3.png`: Imagem versão 3.
-    - `v4.png`: Imagem versão 4.
-  - `/js`: Scripts JavaScript.
-    - `script.js`: Arquivo JavaScript principal.
+- `/public`
+  - `/css`
+    - `apostilas.css`
+    - `auth.css`
+    - `checklists.css`
+    - `create-pass.css`
+    - `home-bolsistas.css`
+    - `home.css`
+    - `profile-edit.css`
+    - `sidebar.css`
+    - `tutorials.css`
+  - `/images`
+    - `calvo.png`
+    - `google.png`
+    - `ifce.png`
+    - `logo.png`
+    - `pc.png`
+    - `v1.png`
+    - `v2.png`
+    - `v3.png`
+    - `v4.png`
+  - `/js`
+    - `script.js`
+  - `/uploads`
+      -`/apostilas`
+- `/src`
+  - `/controllers`
+    - `apostilas-controller.js`
+    - `passportGoogle.js`
+    - `user-controller.js`
+  - `/models`
+    - `apostila-model.js`
+    - `user-model.js`
+  - `/routes`
+    - `/authentication`
+      - `auth.js`
+    - `/pages`
+      - `apostilas.js`
+      - `checklists.js`
+      - `home-bolsistas.js`
+      - `profile-edit.js`
+      - `profile.js`
+      - `tutorials.js`
+    - `home.js`
 
-- `/src`: Código-fonte do projeto.
-  - `/controllers`: Controladores do projeto.
-    - `user-controller.js`: Controlador de usuários.
-    - `passportGoogle.js`: Responsável pela utilização da API oauth2.0 do Google.
-  - `/models`: Modelos de dados do projeto.
-    - `user-model.js`: Modelo de dados de usuários.
-  - `/routes`: Rotas do projeto.
-    - `/authentication`: Rotas de autenticação.
-      - `auth.js`: Rota responsável pela autenticação do usuário.
-    - `/pages`: Rotas para páginas.
-      - `checklists.js`: Rota para a página de checklists.
-      - `handouts.js`: Rota para a página de handouts.
-      - `home-bolsistas.js`: Rota para a página de home de bolsistas.
-      - `profile-edit.js`: Rota responsável pela edição do perfil do usuário.
-      - `profile.js`: Rota responsável pela apresentação do perfil do usuário.
-      - `tutorials.js`: Rota para a página de tutoriais.
-    - `home.js`: Rota para a página inicial.
-
-  - `/views`: Visualizações do projeto.
-    - `/error`: Páginas de erro.
-      - `error401.ejs`: Página de erro 401.
-      - `error409.ejs`: Página de erro 409.
-      - `error500.ejs`: Página de erro 500.
-    - `/partials`: Partes reutilizáveis das visualizações.
-      - `sidebar.ejs`: Barra lateral reutilizável.
-      - `header.ejs`: Cabeçalho reutilizável.
-      - `footer.ejs`: Rodapé reutilizável.
-    - `auth.ejs`: Página de autenticação de usuário.
-    - `checklists.ejs`: Página de checklists.
-    - `create-pass.ejs`: Página de criação de senha.
-    - `handouts.ejs`: Página de handouts.
-    - `home-bolsistas.ejs`: Página de home de bolsistas.
-    - `home.ejs`: Página inicial GERAL
-    - `profile-edit.ejs`: Página de edição de perfil.
-    - `profile.ejs`: Página de visualização de perfil.
-    - `tutorials.ejs`: Página de tutoriais.
-- `/app.js`: Arquivo principal do aplicativo.
-- `.env`: Arquivo de segurança para dados sensíveis.
+  - `/views`
+    - `/error`
+      - `error401.ejs`
+      - `error409.ejs`
+      - `error500.ejs`
+    - `/partials`
+      - `sidebar.ejs`
+      - `header.ejs`
+      - `footer.ejs`
+    - `apostilas-create.ejs`
+    - `apostilas.ejs`
+    - `auth.ejs`
+    - `checklists.ejs`
+    - `create-pass.ejs`
+    - `home-bolsistas.ejs`
+    - `home.ejs`
+    - `profile-edit.ejs`
+    - `profile.ejs`
+    - `tutorials.ejs`
+- `/app.js`
+- `.env`
 
 
 ## Licença
@@ -160,7 +165,7 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
   - [X] Adicionar dias de trabalho junto ao turno;
 - [X] Associar checklist de novatos ao usuário
 - [X] Notificações durante a marcação do checklist de formatação;
-- [ ] Criar página para adicionar/remover apostilas e tutoriais;
+- [X] Criar página para adicionar/remover apostilas e tutoriais; 
 - [ ] Criar página para adicionar/remover regras do setor;
 - [ ] Definir modelo de apresentação das informações de perfil;
 - [ ] Substituir páginas de erro por mensagens flash; --> tarefa cancela por não ser necessária
