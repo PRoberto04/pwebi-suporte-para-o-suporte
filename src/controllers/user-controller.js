@@ -11,7 +11,7 @@ export const updateProfile = async (req, res) =>{
             
         if(!user){return res.status(404).json({error: 'Usuário não encontrado'})}
 
-        res.redirect('../../home-bolsistas');
+        res.redirect('../home-bolsistas');
     } catch (error) {
         console.error('Erro ao atualizar informações do perfil', error);
         res.status(500).render('error/error500');

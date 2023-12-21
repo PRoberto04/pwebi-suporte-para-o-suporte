@@ -87,7 +87,6 @@ import apostilasRoute from "./routes/pages/apostilas.js";
 import tutorialsRoute from "./routes/pages/tutorials.js";
 import checkliistsRoute from "./routes/pages/checklists.js";
 import profileRoute from './routes/pages/profile.js';
-import profileEditRoute from './routes/pages/profile-edit.js';
 
 app.use("/", homeRoute);
 app.use("/auth", authRoute);
@@ -95,7 +94,6 @@ app.use("/auth", authRoute);
 //Essas rotas referem-se a páginas em que os usuários poderão acessar às funcionalidades
 app.use("/page/home-bolsistas",ensureAuthenticated, homebolsistaRoute);
 app.use("/page/profile", ensureAuthenticated, profileRoute);
-app.use("/page/profile/edit", ensureAuthenticated, profileEditRoute);
 app.use("/page/apostilas", ensureAuthenticated, apostilasRoute);
 app.use("/page/tutorials", ensureAuthenticated, tutorialsRoute);
 app.use("/page/checklists", ensureAuthenticated, checkliistsRoute);

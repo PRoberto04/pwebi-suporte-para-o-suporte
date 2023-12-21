@@ -119,7 +119,6 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
       - `apostilas.js`
       - `checklists.js`
       - `home-bolsistas.js`
-      - `profile-edit.js`
       - `profile.js`
       - `tutorials.js`
     - `home.js`
