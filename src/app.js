@@ -68,7 +68,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/../public"));
+app.use(express.static('public'));
 
 function ensureAuthenticated(req, res, next){
   if(req.isAuthenticated()){return next()};
@@ -83,7 +83,7 @@ app.use((req, res, next) => {
 import homeRoute from "./routes/home.js";
 import authRoute from "./routes/authentication/auth.js";
 import homebolsistaRoute from "./routes/pages/home-bolsistas.js";
-import handoutsRoute from "./routes/pages/handouts.js";
+import apostilasRoute from "./routes/pages/apostilas.js";
 import tutorialsRoute from "./routes/pages/tutorials.js";
 import checkliistsRoute from "./routes/pages/checklists.js";
 import profileRoute from './routes/pages/profile.js';
@@ -96,7 +96,7 @@ app.use("/auth", authRoute);
 app.use("/page/home-bolsistas",ensureAuthenticated, homebolsistaRoute);
 app.use("/page/profile", ensureAuthenticated, profileRoute);
 app.use("/page/profile/edit", ensureAuthenticated, profileEditRoute);
-app.use("/page/handouts", ensureAuthenticated, handoutsRoute);
+app.use("/page/apostilas", ensureAuthenticated, apostilasRoute);
 app.use("/page/tutorials", ensureAuthenticated, tutorialsRoute);
 app.use("/page/checklists", ensureAuthenticated, checkliistsRoute);
 
