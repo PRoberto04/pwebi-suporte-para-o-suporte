@@ -165,7 +165,8 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
   - [X] Adicionar dias de trabalho junto ao turno;
 - [X] Associar checklist de novatos ao usuário
 - [X] Notificações durante a marcação do checklist de formatação;
-- [X] Criar página para adicionar/remover apostilas e tutoriais; 
+- [X] Criar página para adicionar/remover apostilas; 
+- [ ] Criar página para adicionar/remover tutoriais; 
 - [ ] Criar página para adicionar/remover regras do setor;
 - [ ] Definir modelo de apresentação das informações de perfil;
 - [ ] Substituir páginas de erro por mensagens flash; --> tarefa cancela por não ser necessária
