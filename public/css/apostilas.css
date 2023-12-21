@@ -1,0 +1,21 @@
+/* Estilos para o título no topo */
+.titulo {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  /* Estilos para a grade */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 quadros na horizontal */
+    gap: 20px; /* Espaço entre os quadros */
+  }
+  
+  /* Estilos para cada quadro */
+  .item {
+    border: 1px solid #a41313;
+    padding: 20px;
+    text-align: center;
+    background-color: #b2fcb6;
+  }
