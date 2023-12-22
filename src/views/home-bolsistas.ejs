@@ -50,70 +50,18 @@
                         </div>
     
                         <div class="card-body">
+                            <% rules.forEach(rule => { %>
                             <div class="table-responsive">
                                 <table width="100%">
                                     <thead>
                                         <tr>
-                                            <th>Cumprir o Horário</th>
-                                            <th>Avisar caso haja um imprevisco, caso contrário FALTA, qualquer atestado deve ser anexado a folha de frequencia</th>
+                                            <th> <%= rule.title %> </th>
+                                            <th> <%= rule.bodyRule %> </th>
                                         </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th>Folga</th>
-                                            <th>Deverão ser solicitadas com antecedencia</th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th>Permanencia</th>
-                                            <th>estar no setor somente no horário do seu turno</th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th>Armário</th>
-                                            <th>Cada um terá o seu, e a responsabilidade é de cada um</th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th>Farda e vestimentas</th>
-                                            <th>usar a farda fornecida pelo serviço social </th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th>Execução</th>
-                                            <th>Seguir as normas de execução padrão</th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th>Treinamentos</th>
-                                            <th>Serão organizados pelso responsáveis em cada área</th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th>situações adversar</th>
-                                            <th>SEMPRE consultar um bolsista mais experiente e/ou o coordenador</th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th>Respeito a todos</th>
-                                            <th>Respeito é bom e conserva os dentes</th>
-                                        </tr>
-                                    </thead>
-                                    <thead>
-                                        <tr>
-                                            <th>Uso da copa</th>
-                                            <th>Usar nos intervalos, limpar o que sujou, evitar barulho e evitar brincadeiras no horário</th>
-                                        </tr>
-                                    </thead>       
+                                    </thead>     
                                 </table>
                             </div>
+                            <% }); %>
                         </div>
 
                     </div>
