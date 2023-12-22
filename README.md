@@ -108,9 +108,12 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
   - `/controllers`
     - `apostilas-controller.js`
     - `passportGoogle.js`
+    - `rules-controller.js`
     - `user-controller.js`
   - `/models`
     - `apostila-model.js`
+    - `rules-model.js`
+    - `tutorial-model.js`
     - `user-model.js`
   - `/routes`
     - `/authentication`
@@ -141,6 +144,7 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
     - `home.ejs`
     - `profile-edit.ejs`
     - `profile.ejs`
+    - `rules-create.ejs`
     - `tutorials-create.ejs`
     - `tutorials.ejs`
 - `/app.js`
@@ -167,6 +171,6 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 - [X] Notificações durante a marcação do checklist de formatação;
 - [X] Criar página para adicionar/remover apostilas; 
 - [X] Criar página para adicionar/remover tutoriais; 
-- [ ] Criar página para adicionar/remover regras do setor;
+- [X] Criar página para adicionar/remover regras do setor;
 - [ ] Definir modelo de apresentação das informações de perfil;
 - [ ] Substituir páginas de erro por mensagens flash; --> tarefa cancelada por não ser necessária
