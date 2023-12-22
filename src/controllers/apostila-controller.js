@@ -10,7 +10,7 @@ export const createApostila = async(req, res) =>{
         await newApostila.save();
     } catch(error){
         console.error(error)
-        res.status(500).send('Ocorreu um erro');
+        res.render('error/error500');
     }
 }
 
@@ -20,6 +20,6 @@ export const getApostilas = async (req, res) => {
         res.render('apostilas', { documents });
     } catch (error) {
         console.error(error);
-        res.status(500).send('Ocorreu um erro ao buscar as apostilas.');
+        res.render('error/error500');
     }
-};
+}
