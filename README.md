@@ -169,4 +169,4 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 - [X] Criar página para adicionar/remover tutoriais; 
 - [ ] Criar página para adicionar/remover regras do setor;
 - [ ] Definir modelo de apresentação das informações de perfil;
-- [ ] Substituir páginas de erro por mensagens flash; --> tarefa cancela por não ser necessária
+- [ ] Substituir páginas de erro por mensagens flash; --> tarefa cancelada por não ser necessária
