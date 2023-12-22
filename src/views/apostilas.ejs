@@ -21,18 +21,18 @@
 
 <main>
     
-<div class="titulo">
-            <h1>Catálogo de  apostilas</h1>
-        </div>
-<div class="grid">
-    <% documents.forEach((document) => { %>
-        <div class="item">
-            <h2><%= document.title %></h2>
-            <a href="/uploads/apostilas/<%= document.fileName %>" target="_blank">Abrir</a> 
+    <div class="titulo">
+                <h1>Catálogo de  apostilas</h1>
+            </div>
+    <div class="grid">
+        <% documents.forEach((document) => { %>
+            <div class="item">
+                <h2><%= document.title %></h2>
+                <a href="/uploads/apostilas/<%= document.fileName %>" target="_blank">Abrir</a> 
 
-        </div>
-    <% }) %>
-</div>
+            </div>
+        <% }) %>
+    </div>
 </main>
 
 </body>
