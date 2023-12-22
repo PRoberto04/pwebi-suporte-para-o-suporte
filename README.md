@@ -141,6 +141,7 @@ Abra seu navegador da web e acesse `http://localhost:3000/` para acessar o proje
     - `home.ejs`
     - `profile-edit.ejs`
     - `profile.ejs`
+    - `tutorials-create.ejs`
     - `tutorials.ejs`
 - `/app.js`
 - `.env`
@@ -165,7 +166,7 @@ Este projeto está licenciado sob os termos da [Licença MIT](LICENSE).
 - [X] Associar checklist de novatos ao usuário
 - [X] Notificações durante a marcação do checklist de formatação;
 - [X] Criar página para adicionar/remover apostilas; 
-- [ ] Criar página para adicionar/remover tutoriais; 
+- [X] Criar página para adicionar/remover tutoriais; 
 - [ ] Criar página para adicionar/remover regras do setor;
 - [ ] Definir modelo de apresentação das informações de perfil;
 - [ ] Substituir páginas de erro por mensagens flash; --> tarefa cancela por não ser necessária
