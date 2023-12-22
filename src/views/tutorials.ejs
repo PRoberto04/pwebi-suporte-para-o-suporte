@@ -19,55 +19,19 @@
             <%- include ('./partials/header') %>
             
             <main>
-                <!-- Título da Página -->
-                <div class="pagetitle">
-                    <h1>Biblioteca de tutoriais</h1>
-                </div>
-
+    
+                <div class="titulo">
+                            <h1>Biblioteca de tutoriais</h1>
+                        </div>
                 <div class="grid2">
-                    <!-- Quadro 1 -->
-                    <div class="cardTutorial">
-                        <img src="/images/v1.png" alt="Imagem 1">
-                        <h2>Chamados internos</h2>
-                        <button onclick="abrirPDF1()">Abrir PDF</button>
-                    </div>
-
-                    <!-- Quadro 2 -->
-                    <div class="cardTutorial">
-                        <img src="/images/v2.png" alt="Imagem 2">
-                        <h2>O que checar no HARDWARE</h2>
-                        <button onclick="abrirPDF2()">Abrir PDF</button>
-                    </div>
-
-                    <!-- Quadro 3 -->
-                    <div class="cardTutorial">
-                        <img src="/images/v3.png" alt="Imagem 3">
-                        <h2>Ordem de serviço correta</h2>
-                        <button onclick="abrirPDF3()">Abrir PDF</button>
-                    </div>
-
-                    <!-- Quadro 4 -->
-                    <div class="cardTutorial">
-                        <img src="/images/v3.png" alt="Imagem 4">
-                        <h2>Organização do Suap</h2>
-                        <button onclick="abrirPDF4()">Abrir PDF</button>
-                    </div>
-
-                    <!-- Quadro 5 -->
-                    <div class="cardTutorial">
-                        <img src="/images/v4.png" alt="Imagem 5">
-                        <h2>Título do Documento 5</h2>
-                        <button onclick="abrirPDF5()">Abrir PDF</button>
-                    </div>
-
-                    <!-- Quadro 6 -->
-                    <div class="cardTutorial">
-                        <img src="/images/v1.png" alt="Imagem 6">
-                        <h2>Título do Documento 6</h2>
-                        <button onclick="abrirPDF6()">Abrir PDF</button>
-                    </div>
+                    <% documents.forEach((document) => { %>
+                        <div class="cardTutorial">
+                            <h2><%= document.title %></h2>
+                            <a href="/uploads/tutorials/<%= document.fileName %>" target="_blank">Abrir</a> 
+            
+                        </div>
+                    <% }) %>
                 </div>
-
             </main>
         </div>
     </body>
